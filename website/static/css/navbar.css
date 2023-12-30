@@ -1,0 +1,18 @@
+#logo-main {
+  display: block;
+  margin: 20px auto;
+}
+
+
+#main-navbar .navbar-nav {
+  margin: auto;
+}
+
+#main-navbar .nav-item {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#main-navbar .nav-link {
+  text-decoration-line: none;
+  color: black;
+}

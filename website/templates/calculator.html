@@ -1,0 +1,1001 @@
+{% extends "base.html" %}
+{% block title %}Greengo | Home{% endblock %}
+
+{% block body %}
+<style>
+  *,
+   html,
+   body,
+   *::after,
+   *::before,
+   *:not(nav) {
+   box-sizing: border-box;
+   }
+   :root {
+   --secondarycolor: #89be40;
+   --lightprimarycolor: #deefed;
+   --primarycolor: #008370;
+   --lightsecondarycolor: #d0a36b;
+   }
+   #offset-button:hover {
+   background-color: var(--lightsecondarycolor);
+   }
+   .main-header__left-image {
+   background-color: var(--secondarycolor);
+   }
+   .already-know__link {
+   color: var(--primarycolor);
+   }
+   .calculation-choice .selected {
+   color: var(--primarycolor) !important;
+   background-color: var(--lightprimarycolor) !important;
+   border: 2px solid var(--primarycolor) !important;
+   }
+   .select-automobile .select-av-option.selected {
+   background-color: var(--lightprimarycolor);
+   border-color: var(--lightprimarycolor);
+   border-color: var(--primarycolor);
+   }
+   .calculate-btn {
+   background-color: var(--primarycolor);
+   }
+   .radio-av-option.selected .radio-av-radio-filler {
+   background-color: var(--primarycolor);
+   }
+   .radio-av-option.selected .radio-av-radio {
+   border-color: var(--primarycolor);
+   }
+   .select-automobile .select-av-option.selected .icon-selected-automobile-para {
+   fill: var(--primarycolor);
+   color: var(--primarycolor);
+   }
+   .select-automobile .select-av-option.selected .select-automobile__para {
+   color: var(--primarycolor);
+   }
+   #calculate-manual-offset {
+   background-color: var(--primarycolor);
+   }
+      #offset-button {
+   background-color: #F7961F;
+   }
+   #manual-calculator {
+   background-color: #ffffff;
+   }
+         .single-trip-view__options__dropdowncontainer-listitem:hover {
+   background-color: var(--lightprimarycolor);
+   }
+   .selected_triptype {
+   background-color: var(--primarycolor);
+   }
+   .selected_triptype:hover {
+   background-color: var(--primarycolor);
+   }
+   .single-trip-view__options__people__dropdowncontainer-listitem:hover {
+   background-color: var(--lightprimarycolor);
+   }
+   .selected_numberofPeople {
+   background-color: var(--primarycolor);
+   }
+   .selected_numberofPeople:hover {
+   background-color: var(--primarycolor);
+   }
+   .single-trip-view__options__seat__dropdown__listitem:hover {
+   background-color: var(--lightprimarycolor);
+   }
+   .multitrip_selected_seat {
+   background-color: var(--primarycolor);
+   }
+   .multitrip_selected_seat:hover {
+   background-color: var(--primarycolor);
+   }
+   .selected_seat {
+   background-color: var(--primarycolor);
+   }
+   .selected_seat:hover {
+   background-color: var(--primarycolor);
+   }
+   .plane-type .select-box__option:hover:not(.charter-active-state) {
+   background-color: var(--lightprimarycolor);
+   }
+   .charter-active-state {
+   background-color: var(--primarycolor);
+   }
+   .charter-active-state:hover {
+   background-color: var(--primarycolor);
+   }
+   .car-view__calculate-by__dropdowncontainer-listitem:hover {
+   background-color: var(--lightprimarycolor);
+   }
+   .selected_calculateby {
+   background-color: var(--primarycolor);
+   }
+   .selected_calculateby:hover {
+   background-color: var(--primarycolor);
+   }
+   .boat-view__fuel-type__dropdownsubcontainer-listitem:hover {
+   background-color: var(--lightprimarycolor);
+   }
+   .selected_fueltype {
+   background-color: var(--primarycolor);
+   }
+   .selected_fueltype:hover {
+   background-color: var(--primarycolor);
+   }
+   .add-minus-func__minus,
+   .add-minus-func__add {
+   border-color: var(--primarycolor);
+   }
+   .add-another-flight-container-button-icon-path,
+   .add-another-flight-container-button-text__p {
+   color: var(--primarycolor);
+   fill: var(--primarycolor);
+   }
+   .calculator-global-minus-icon,
+   .calculator-global-plus-icon {
+   fill: var(--primarycolor);
+   }
+   .from-location-dropdown-listitem:hover {
+   background-color: var(--lightprimarycolor);
+   }
+   .from-location-dropdown-listitem-airport-container:hover {
+   background-color: var(--lightprimarycolor);
+   }
+   .general-select-option.selected .car-view__car-img-option {
+   background-color: var(--lightprimarycolor);
+   }
+   .general-select-option.selected svg path {
+   fill: var(--primarycolor);
+   }
+   .manual-calculator-information-icon {
+   fill: var(--primarycolor);
+   }
+   .arrow-down-details:hover {
+   fill: var(--primarycolor);
+   }
+   .internova-trigger{ display: flex; margin-bottom: 0; margin-top: 20px; align-items: baseline; justify-content: start;}
+   .internova-trigger input {font-size: 15px;border: 1px solid #ebedf0; border-radius: 2px;background-color: white;padding-left: 10px;width: 190px;height: 40px;}
+</style>
+
+
+<div class="container-fluid">
+<link rel="stylesheet" href="/static/css/calculator.css">
+<div class="container-fluid">
+<div class="tm-middle uk-grid" data-uk-grid-match="" data-uk-grid-margin="">
+<div class="tm-main uk-width-medium-1-1">
+<main class="tm-content">
+<article class="uk-article">
+<section class="wpb-content-wrapper"><div id="calculatorRow" class="vc_row wpb_row vc_row-fluid"><script>var is_main_website = '0';var mkd_base_url = '/'; var main_url = 'https://sustainabletravel.org/';
+       current_url = 'https://sustainabletravel.org/';
+    var client_api_key = 'STIKEY_61f421ebc98cf826756314'; var client_type = 'plugin';</script>
+<link rel="stylesheet" href="https://sustainabletravel.org/wp-content/plugins/sti_client/public/normalize.css">
+<link rel="stylesheet" href="https://sustainabletravel.org/wp-content/plugins/sti_client/public/main.css">
+<link rel="stylesheet" href="https://sustainabletravel.org/wp-content/plugins/sti_client/public/app.css">
+<link rel="stylesheet" href="https://sustainabletravel.org/wp-content/plugins/sti_client/public/style.css?ver=2.2">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/css/autoComplete.02.min.css">
+<div id="sti-container">
+<main class="mkd-container" id="mkd-container">
+<div class="main-container">
+<div class="main-header">
+<div class="main-header__left">
+<div class="main-header__left-text">
+<h1>Calculate Your Travel Carbon Footprint</h1>
+<p class="calc-purpose">Use our carbon footprint calculator to calculate your travel emissions and purchase carbon offsets.
+</p>
+</div>
+</div>
+
+<div class="main-header__right" id="calculate_offset_div" style="display: none;">
+<span class="manual-calculator-information-icon-container">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="manual-calculator-information-icon" d="M7.25 4.25H8.75V5.75H7.25V4.25ZM7.25 7.25H8.75V11.75H7.25V7.25ZM8 0.5C3.86 0.5 0.5 3.86 0.5 8C0.5 12.14 3.86 15.5 8 15.5C12.14 15.5 15.5 12.14 15.5 8C15.5 3.86 12.14 0.5 8 0.5ZM8 14C4.6925 14 2 11.3075 2 8C2 4.6925 4.6925 2 8 2C11.3075 2 14 4.6925 14 8C14 11.3075 11.3075 14 8 14Z"></path>
+</svg>
+</span>
+<p class="already-know__para">Don't know your footprint? <a class="already-know__link" onclick="custom_calculator()" href="javascript:void(0)">Calculate it
+now</a>.
+</p>
+</div>
+</div>
+<div class="main-body">
+<div class="calculator" id="manual-calculator" style="display: none; ">
+<p class="trip-details-h2"><b style="color: #333 !important">Select Your Offset Method</b></p>
+<div class="calculation-choice choice-all-visible" id="calculation-choice-options">
+<div class="choice-amount choice-av-option select-av-option amount
+                     " data-value="amount">
+<b class="currency-icon-text">$</b>
+<h3 class="calculation-choice__para">Amount</h3>
+</div>
+<div class="choice-metric choice-av-option select-av-option tons
+                     selected" data-value="tons">
+<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.9328 17.4165L17.08 6.00518C16.9316 5.41182 16.4379 5.00049 15.8742 5.00049H13.5207C13.6601 4.60791 13.7504 4.19111 13.7504 3.75049C13.7504 1.67939 12.0715 0.000488281 10.0004 0.000488281C7.92927 0.000488281 6.25036 1.67939 6.25036 3.75049C6.25036 4.19111 6.3402 4.60791 6.48005 5.00049H4.12653C3.56286 5.00049 3.06872 5.41221 2.92067 6.00518L0.0671548 17.4165C-0.258236 18.7177 0.639811 20.0001 1.87614 20.0001H18.1242C19.3601 20.0001 20.2582 18.7177 19.9328 17.4165V17.4165ZM9.99997 5.0001C9.3109 5.0001 8.74997 4.43916 8.74997 3.7501C8.74997 3.06104 9.3109 2.5001 9.99997 2.5001C10.689 2.5001 11.25 3.06104 11.25 3.7501C11.25 4.43916 10.689 5.0001 9.99997 5.0001Z" fill=""></path>
+</svg>
+<h3 class="calculation-choice__para">Metric Tons</h3>
+</div>
+</div>
+<div class="multiple-trip-view__q">
+</div>
+<div class="line-divider"></div>
+<button class="calculate-manual-btn" id="calculate-manual-offset">CALCULATE</button>
+</div>
+<div class="calculator" id="calculator" style="1">
+<p class="trip-details-h2" style="background-color: white">
+    <b style="background-color: white !important">Trip Details</b>
+</p>
+<div class="select-automobile select-all-visible" id="select-automobile-options" data-value="plane">
+<div class="select-automobile__plane select-av-option selected" data-value="plane" style="background-color: white">
+<svg width="21" height="20" class="icon-selected-automobile-para" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.1693 13.3327V11.666L11.5026 7.49935V2.91602C11.5026 2.22435 10.9443 1.66602 10.2526 1.66602C9.56094 1.66602 9.0026 2.22435 9.0026 2.91602V7.49935L2.33594 11.666V13.3327L9.0026 11.2493V15.8327L7.33594 17.0827V18.3327L10.2526 17.4993L13.1693 18.3327V17.0827L11.5026 15.8327V11.2493L18.1693 13.3327Z"></path>
+</svg>
+<h2 class="select-automobile__para">Flight</h2>
+</div>
+</div>
+<div class="plane-view" style="background-color:white">
+<div class="trip-type radio-all-visible" data-value="single" data-callback="tripTypeFunc">
+<div class="trip-type__single radio-av-option selected" data-value="single">
+<div class="trip-type__radio radio-av-radio">
+<span class="trip-type__radio-filler radio-av-radio-filler"></span>
+</div>
+<p class="trip-type__para radio-av-option__para">One Trip</p>
+</div>
+<div class="trip-type__single radio-av-option" data-value="multiple">
+<div class="trip-type__radio radio-av-radio">
+<span class="trip-type__radio-filler radio-av-radio-filler"></span>
+</div>
+<p class="trip-type__para radio-av-option__para">Multiple Trips</p>
+</div>
+</div>
+<div class="single-trip-view">
+<div class="single-trip-view__options">
+<div class="single-trip-view__options__triptype" id="single-trip-view__options__triptype">
+<div class="single-trip-view__options__buttoncontainer">
+<button class="single-trip-view__options__button" id="triptype-button-value" data-value="Round trip">
+<span class="single-trip-view__options__triptype-button-text" id="triptypeDisplay">Round trip</span>
+<span class="single-trip-view__options__triptype-button-dropdownicon">
+<svg width="18" height="18" viewBox="0 0 24 24" focusable="false" class="">
+<path fill="#4B5563" d="M7 10l5 5 5-5H7z"></path>
+</svg>
+</span>
+</button>
+</div>
+<input type="hidden" name="single_trip_counter" value="1" id="single_trip_counter">
+<div class="single_trip_details" style="display: none;">
+<input class="" type="hidden" name="from-1" id="from-1" value="3506" data-counter="1"><input class="" type="hidden" name="from-name-1" id="from-name-1" value="Singapore SIN" data-counter="1"><input class="" type="hidden" name="to-1" id="to-1" value="2373" data-counter="1"><input class="" type="hidden" name="to-name-1" id="to-name-1" value="Osaka KIX" data-counter="1"></div>
+<div class="single-trip-view__options__dropdowncontainer hide dropdown-select-box" id="triptype-dropdown" aria-hidden="true">
+<div class="single-trip-view__options__dropdownsubcontainer">
+<ul class="single-trip-view__options__dropdowncontainer-list" id="triptype-list">
+<li value="round-trip" class="single-trip-view__options__dropdowncontainer-listitem selected_triptype">
+Round trip
+</li>
+<li value="one-way" class="single-trip-view__options__dropdowncontainer-listitem">
+One way
+</li>
+<li value="multi-city" class="single-trip-view__options__dropdowncontainer-listitem">
+Multi-city
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="single-trip-view__options__people">
+<div class="single-trip-view__options__people__button">
+<div class="single-trip-view__options__people__button-container">
+<button class="single-trip-view__options__people__button-container-button" data-value="0" id="single-trip-view__options__people__button-container-button">
+<span class="single-trip-view__options__people__button-container-button-icon">
+<svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8923 8.44171C15.034 9.21671 15.834 10.2667 15.834 11.6667V14.1667H19.1673V11.6667C19.1673 9.85004 16.1923 8.77504 13.8923 8.44171Z" fill="#4B5563"></path>
+<path d="M12.5007 7.50004C14.3423 7.50004 15.834 6.00837 15.834 4.16671C15.834 2.32504 14.3423 0.833374 12.5007 0.833374C12.109 0.833374 11.7423 0.916707 11.3923 1.03337C12.084 1.89171 12.5007 2.98337 12.5007 4.16671C12.5007 5.35004 12.084 6.44171 11.3923 7.30004C11.7423 7.41671 12.109 7.50004 12.5007 7.50004Z" fill="#4B5563"></path>
+<path d="M7.50065 7.50004C9.34232 7.50004 10.834 6.00837 10.834 4.16671C10.834 2.32504 9.34232 0.833374 7.50065 0.833374C5.65898 0.833374 4.16732 2.32504 4.16732 4.16671C4.16732 6.00837 5.65898 7.50004 7.50065 7.50004ZM7.50065 2.50004C8.41732 2.50004 9.16732 3.25004 9.16732 4.16671C9.16732 5.08337 8.41732 5.83337 7.50065 5.83337C6.58398 5.83337 5.83398 5.08337 5.83398 4.16671C5.83398 3.25004 6.58398 2.50004 7.50065 2.50004Z" fill="#4B5563"></path>
+<path d="M7.50065 8.33337C5.27565 8.33337 0.833984 9.45004 0.833984 11.6667V14.1667H14.1673V11.6667C14.1673 9.45004 9.72565 8.33337 7.50065 8.33337ZM12.5007 12.5H2.50065V11.675C2.66732 11.075 5.25065 10 7.50065 10C9.75065 10 12.334 11.075 12.5007 11.6667V12.5Z" fill="#4B5563"></path>
+</svg>
+</span>
+<span class="single-trip-view__options__people__button-container-button-text" id="total-people-traveling">1</span>
+<span class="single-trip-view__options__people__button-container-button-dropdownicon">
+<svg width="18" height="18" viewBox="0 0 24 24" focusable="false" class="">
+<path fill="#4B5563" d="M7 10l5 5 5-5H7z"></path>
+</svg>
+</span>
+</button>
+</div>
+</div>
+<div class="single-trip-view__options__people__dropdowncontainer hide dropdown-select-box" id="numberofpeopledropdown">
+<div class="single-trip-view__options__people__dropdownsubcontainer">
+<ul class="single-trip-view__options__people__dropdowncontainer-list" id="peoplenumber-list">
+<li value="1" class="single-trip-view__options__people__dropdowncontainer-listitem selected_numberofPeople">
+1
+</li>
+<li value="2" class="single-trip-view__options__people__dropdowncontainer-listitem">
+2
+</li>
+<li value="3" class="single-trip-view__options__people__dropdowncontainer-listitem">
+3
+</li>
+<li value="4" class="single-trip-view__options__people__dropdowncontainer-listitem">
+4
+</li>
+<li value="5" class="single-trip-view__options__people__dropdowncontainer-listitem">
+5
+</li>
+<li value="6" class="single-trip-view__options__people__dropdowncontainer-listitem">
+6
+</li>
+<li value="7" class="single-trip-view__options__people__dropdowncontainer-listitem">
+7
+</li>
+<li value="8" class="single-trip-view__options__people__dropdowncontainer-listitem">
+8
+</li>
+<li value="9" class="single-trip-view__options__people__dropdowncontainer-listitem">
+9
+</li>
+<li value="10" class="single-trip-view__options__people__dropdowncontainer-listitem">
+10
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="single-trip-view__options__seat">
+<div class="single-trip-view__options__seat__button">
+<div class="single-trip-view__options__seat__button-container">
+<button class="single-trip-view__options__seat__button-container-button" id="seattype-button-value" data-value="Economy">
+<span class="single-trip-view__options__seat__button-container-button_text" id="seattypeDisplay">Economy</span>
+<span class="single-trip-view__options__seat__button-container-button__icon">
+<svg width="18" height="18" viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+<path fill="#4B5563" d="M7 10l5 5 5-5H7z"></path>
+</svg>
+</span>
+</button>
+</div>
+</div>
+<div class="single-trip-view__options__seat__dropdowncontainer hide dropdown-select-box" id="seatdropdown">
+<div class="single-trip-view__options__seat__dropdownsubcontainer">
+<ul class="single-trip-view__options__seat__dropdown__list" id="seattype-list">
+<li class="single-trip-view__options__seat__dropdown__listitem selected_seat" id="single_economy">
+Economy
+</li>
+<li class="single-trip-view__options__seat__dropdown__listitem" id="single_premium">
+Premium
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="single-trip-view__input">
+<div class="single-trip-view__input__container" id="single-trip-view__input__container">
+<div class="single-trip-view__input__container__row" data-count="1" id="travel-row-1">
+<div class="single-trip-view__input__container__row-from" tabindex="0">
+<div class="single-trip-view__input__container__row-from-container">
+<div class="from-icon-container">
+<svg width="13" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.50065 0.15271V1.81938H9.99232L0.333984 11.4777L1.50898 12.6527L11.1673 2.99438V8.48604H12.834V0.15271H4.50065Z" fill="#4B5563"></path>
+</svg>
+</div>
+<div class="from-input-container">
+<input autocomplete="off" type="text" name="" id="from-location-input" class="from-location-input" placeholder="Where From?" datavalue="None" value="">
+</div>
+
+</div>
+
+<div class="from-location-dropdown-container from-airport-dropdown" id="from-location-dropdown" style="display: none;">
+<div class="from-location-dropdown-subcontainer">
+<ul class="from-location-dropdown-list from-list" id="from-location-dropdown-list">
+</ul>
+</div>
+</div>
+
+</div>
+<div class="single-trip-view__input__container__row-exchange">
+<svg class="exchange-svg-mobile" width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.3353 4.2829L8.17257 4.2829V6.61086L16.3353 6.61086V10.1028L20.9814 5.44688L16.3353 0.79096V4.2829ZM0.0214844 12.4308L4.6676 17.0867V13.5947H12.8303V11.2668H4.6676L4.6676 7.77484L0.0214844 12.4308ZM16.3353 4.2829L8.17257 4.2829V6.61086L16.3353 6.61086V10.1028L20.9814 5.44688L16.3353 0.79096V4.2829ZM0.0214844 12.4308L4.6676 17.0867V13.5947H12.8303V11.2668H4.6676L4.6676 7.77484L0.0214844 12.4308Z" fill="#4B5563"></path>
+</svg>
+</div>
+<div class="single-trip-view__input__container__row-to default-single-trip-view__input_container_row-to" tabindex="0">
+<div class="single-trip-view__input__container__row-to-container">
+<div class="to-icon-container">
+<svg width="13" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.291 4.48608H11.6243V9.97775L1.96602 0.319416L0.791016 1.49442L10.4493 11.1527H4.95768V12.8194H13.291V4.48608Z" fill="#4B5563"></path>
+</svg>
+</div>
+<div class="to-input-container">
+<input autocomplete="off" type="text" name="" id="to-location-input" class="to-location-input" placeholder="Where To?" datavalue="none" value="">
+</div>
+<div class="to-icondropdown-container">
+</div>
+</div>
+
+<div class="from-location-dropdown-container to-airport-dropdown" id="to-location-dropdown" style="display: none;">
+<div class="from-location-dropdown-subcontainer">
+<ul class="from-location-dropdown-list to-location-dropdown-list to-list" id="to-location-dropdown-list">
+</ul>
+</div>
+</div>
+
+</div>
+<div class="delete-container hide" id="delete-container">
+<svg width="15" height="15" viewBox="0 0 24 24" focusable="false" class="cross-icon">
+<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z">
+</path>
+</svg>
+</div>
+</div>
+</div>
+<div class="add-another-flight-container hide" id="another-flight-container" style="display: none;">
+<button class="add-another-flight-container-button" onclick="addAnotherFlight()">
+<div class="add-another-flight-container-button-subcontainer">
+<div class="add-another-flight-container-button-icon">
+<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="add-another-flight-container-button-icon-path" d="M7.98373 0.993164C3.85163 0.993164 0.498047 4.34542 0.498047 8.47589C0.498047 12.6064 3.85163 15.9586 7.98373 15.9586C12.1158 15.9586 15.4694 12.6064 15.4694 8.47589C15.4694 4.34542 12.1158 0.993164 7.98373 0.993164ZM11.7266 9.22416H8.7323V12.2173H7.23516V9.22416H4.24089V7.72762H7.23516V4.73453H8.7323V7.72762H11.7266V9.22416Z"></path>
+</svg>
+</div>
+<div class="add-another-flight-container-button-text">
+<p class="add-another-flight-container-button-text__p"> Add another
+flight
+</p>
+</div>
+</div>
+</button>
+</div>
+</div>
+</div>
+<div class="multiple-trip-view d-none">
+<div class="multiple-trip-view__q">
+<p class="multiple-trip-view__p"><b>How many round trip flights would you like to
+offset?</b>
+</p>
+</div>
+<div class="economy-or-premium select-box">
+<div class="single-trip-view__options__seat__button">
+<div class="single-trip-view__options__seat__button-container">
+<button class="single-trip-view__options__seat__button-container-button" id="multipletrip-seattype-button-value" data-value="Economy">
+<span class="single-trip-view__options__seat__button-container-button_text" id="multipletrip-seattypeDisplay">
+Economy
+</span>
+<span class="single-trip-view__options__seat__button-container-button__icon">
+<svg width="18" height="18" viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+<path fill="#4B5563" d="M7 10l5 5 5-5H7z"></path>
+</svg>
+</span>
+</button>
+</div>
+</div>
+<div class="single-trip-view__options__seat__dropdowncontainer hide dropdown-select-box" id="multipletrip-seatdropdown">
+<div class="single-trip-view__options__seat__dropdownsubcontainer">
+<ul class="single-trip-view__options__seat__dropdown__list" id="multipletrip-seattype-list">
+<li id="multiple_economy" class="single-trip-view__options__seat__dropdown__listitem multitrip_selected_seat">
+Economy
+</li>
+<li id="multiple_premium" class="single-trip-view__options__seat__dropdown__listitem">
+Premium
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="multiple-trip-view__answers">
+<div class="multiple-trip-view__first-q">
+<p class="multiple-trip-view__first-q__p"><b class="multiple-trip-view__first-q__p__boldtxt">Short Flights </b><br>less
+than 3 hours
+</p>
+<div class="multiple-trip-view__add-minus-func short-flight add-minus-func" data-value="0">
+<div class="add-minus-func__minus">
+<svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-minus-icon" d="M11.625 1.42552V0.191483H0.375V1.42552H11.625Z"></path>
+</svg>
+</div>
+<input style="border: none;text-align:center" type="number" value="0" class="add-minus-func__number">
+<div class="add-minus-func__add">
+<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-plus-icon" d="M11.625 6.79282V5.43328H6.72704V0.0212708H5.27296V5.43328H0.375V6.79282H5.27296V12.3617H6.72704V6.79282H11.625Z"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="multiple-trip-view__first-q">
+<p class="multiple-trip-view__first-q__p"><b class="multiple-trip-view__first-q__p__boldtxt">Medium Flights </b><br>3-6
+hours
+</p>
+<div class="multiple-trip-view__add-minus-func medium-flight add-minus-func" data-value="0">
+<div class="add-minus-func__minus">
+<svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-minus-icon" d="M11.625 1.42552V0.191483H0.375V1.42552H11.625Z"></path>
+</svg>
+</div>
+<input style="border: none;text-align:center" type="number" value="0" class="add-minus-func__number">
+<div class="add-minus-func__add">
+<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-plus-icon" d="M11.625 6.79282V5.43328H6.72704V0.0212708H5.27296V5.43328H0.375V6.79282H5.27296V12.3617H6.72704V6.79282H11.625Z"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="multiple-trip-view__first-q">
+<p class="multiple-trip-view__first-q__p"><b class="multiple-trip-view__first-q__p__boldtxt">Long Flights </b><br>6+
+hours
+</p>
+<div class="multiple-trip-view__add-minus-func long-flight add-minus-func" data-value="0">
+<div class="add-minus-func__minus">
+<svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-minus-icon" d="M11.625 1.42552V0.191483H0.375V1.42552H11.625Z"></path>
+</svg>
+</div>
+<input style="border: none;text-align:center" type="number" value="0" class="add-minus-func__number">
+<div class="add-minus-func__add">
+<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-plus-icon" d="M11.625 6.79282V5.43328H6.72704V0.0212708H5.27296V5.43328H0.375V6.79282H5.27296V12.3617H6.72704V6.79282H11.625Z"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="charter-view charter-trip-view d-none">
+<div class="plane-type-container">
+<p class="plane-type-container__p"><b>Plane Type</b></p>
+<div class="plane-type select-box" data-select-remove="false" id="plane-type" data-value="">
+<p class="plane-type__p selected placeholder">Select Plane</p>
+<div class="select-box__options">
+<p class="optgroup-text">VLJ</p><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="141" id="Citation CJ1+">Citation CJ1+</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="90" id="Citation Mustang">Citation Mustang</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="76" id="Eclipse 500">Eclipse 500</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="76" id="Eclipse 550">Eclipse 550</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="120" id="Hondajet">Hondajet</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="113" id="Phenom 100">Phenom 100</div><p class="optgroup-text">Light</p><div class="select-box__option" data-category="Light" data-length="2" data-fuel="222" id="Beechjet 400A">Beechjet 400A</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="160" id="Citation Bravo">Citation Bravo</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="141" id="Citation CJ2">Citation CJ2</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="159" id="Citation CJ2+">Citation CJ2+</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="172" id="Citation CJ3">Citation CJ3</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="172" id="Citation CJ3+">Citation CJ3+</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="209" id="Citation CJ4">Citation CJ4</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="205" id="Citation Encore">Citation Encore</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="205" id="Citation Encore+">Citation Encore+</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="134" id="Citation M2">Citation M2</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="223" id="Citation Ultra">Citation Ultra</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="210" id="Citation V">Citation V</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="222" id="Hawker 400XP">Hawker 400XP</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="0" id="HondaJet Elite">HondaJet Elite</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="202" id="Learjet 31">Learjet 31</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="207" id="Learjet 40">Learjet 40</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="224" id="Learjet 40XR">Learjet 40XR</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="178" id="Nextant 400XTi">Nextant 400XTi</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="160" id="Nextant 400XT">Nextant 400XT</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="154" id="Pilatus PC-24">Pilatus PC-24</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="159" id="Premier I">Premier I</div><p class="optgroup-text">Super Light</p><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="250" id="Citation Excel">Citation Excel</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="239" id="Citation XLS">Citation XLS</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="239" id="Citation XLS+">Citation XLS+</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="205" id="Learjet 45">Learjet 45</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="227" id="Learjet 45XR">Learjet 45XR</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="198" id="Learjet 70">Learjet 70</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="199" id="Learjet 75">Learjet 75</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="183" id="Phenom 300">Phenom 300</div><p class="optgroup-text">Midsize</p><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="295" id="Challenger 300">Challenger 300</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="297" id="Challenger 350">Challenger 350</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="281" id="Citation Sovereign">Citation Sovereign</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="274" id="Citation Sovereign+">Citation Sovereign+</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="386" id="Citation X">Citation X</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="400" id="Citation X+">Citation X+</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="287" id="Falcon 2000">Falcon 2000</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="292" id="Falcon 2000DX">Falcon 2000DX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="284" id="Falcon 2000EX">Falcon 2000EX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="321" id="Falcon 2000LX">Falcon 2000LX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="322" id="Falcon 2000LXS">Falcon 2000LXS</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="325" id="Falcon 2000S">Falcon 2000S</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="319" id="Falcon 50EX">Falcon 50EX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="278" id="Gulfstream G200">Gulfstream G200</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="297" id="Gulfstream G280">Gulfstream G280</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="321" id="Hawker 4000">Hawker 4000</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="287" id="Legacy 500">Legacy 500</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="236" id="Praetor 600">Praetor 600</div><p class="optgroup-text">Large</p><div class="select-box__option" data-category="Large" data-length="2" data-fuel="365" id="Challenger 601">Challenger 601</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="358" id="Challenger 604">Challenger 604</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="329" id="Challenger 605">Challenger 605</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="329" id="Challenger 650">Challenger 650</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="346" id="Challenger 850">Challenger 850</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="328" id="Falcon 900B">Falcon 900B</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="314" id="Falcon 900DX">Falcon 900DX</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="314" id="Falcon 900EX">Falcon 900EX</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="304" id="Falcon 900LX">Falcon 900LX</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="506" id="Global 5000">Global 5000</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="540" id="Gulfstream G300">Gulfstream G300</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="540" id="Gulfstream G400">Gulfstream G400</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="517" id="Gulfstream G450">Gulfstream G450</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="447" id="Gulfstream G500">Gulfstream G500</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="540" id="Gulfstream GIV-SP">Gulfstream GIV-SP</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="503" id="Gulfstream GVSP">Gulfstream GVSP</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="363" id="Legacy 600">Legacy 600</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="381" id="Legacy 650">Legacy 650</div><p class="optgroup-text">Ultra Long Range</p><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="385" id="Falcon 7X">Falcon 7X</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="512" id="Global 6000">Global 6000</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="486" id="Global 6500">Global 6500</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="567" id="Global 7500">Global 7500</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="535" id="Global Express">Global Express</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="532" id="Global Express XRS">Global Express XRS</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="447" id="Gulfstream G550">Gulfstream G550</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="503" id="Gulfstream G650">Gulfstream G650</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="503" id="Gulfstream G650ER">Gulfstream G650ER</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="503" id="Gulfstream GV">Gulfstream GV</div><p class="optgroup-text">VIP Airliner</p><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="690" id="Airbus ACJ318">Airbus ACJ318</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="740" id="Airbus ACJ319">Airbus ACJ319</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="907" id="Airbus ACJ320">Airbus ACJ320</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="0" id="Boeing 777-200LR VIP">Boeing 777-200LR VIP</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="758" id="Boeing Business Jet">Boeing Business Jet</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="883" id="Boeing Business Jet 2">Boeing Business Jet 2</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="836" id="Boeing Business Jet 3">Boeing Business Jet 3</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="684" id="Lineage 1000">Lineage 1000</div><p class="optgroup-text">Turboprop Aircraft</p><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="0" id="Aviator TP600">Aviator TP600</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="0" id="Beechcraft 1900D">Beechcraft 1900D</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="102" id="King Air 100">King Air 100</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="113" id="King Air 200">King Air 200</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="138" id="King Air 250">King Air 250</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="136" id="King Air 350">King Air 350</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="104" id="King Air B100">King Air B100</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="113" id="King Air B200">King Air B200</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="135" id="King Air B200GT">King Air B200GT</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="78" id="King Air C90">King Air C90</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="103" id="King Air C90GTi">King Air C90GTi</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="48" id="Kodiak 100">Kodiak 100</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="48" id="Kodiak 100 Series II">Kodiak 100 Series II</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="136" id="Piaggio Aero P180 Avanti II">Piaggio Aero P180 Avanti II</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="136" id="Piaggio P180 Avanti">Piaggio P180 Avanti</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="66" id="Pilatus PC-12">Pilatus PC-12</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="76" id="Pilatus PC-12 NG">Pilatus PC-12 NG</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="62" id="Socata TBM 700">Socata TBM 700</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="107" id="Super King Air F90">Super King Air F90</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="0" id="Swearingen Fairchild Merlin III">Swearingen Fairchild Merlin III</div><p class="optgroup-text">VLJ</p><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="141" id="Citation CJ1+">Citation CJ1+</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="90" id="Citation Mustang">Citation Mustang</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="76" id="Eclipse 500">Eclipse 500</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="76" id="Eclipse 550">Eclipse 550</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="120" id="Hondajet">Hondajet</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="113" id="Phenom 100">Phenom 100</div><p class="optgroup-text">Light</p><div class="select-box__option" data-category="Light" data-length="2" data-fuel="222" id="Beechjet 400A">Beechjet 400A</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="160" id="Citation Bravo">Citation Bravo</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="141" id="Citation CJ2">Citation CJ2</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="159" id="Citation CJ2+">Citation CJ2+</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="172" id="Citation CJ3">Citation CJ3</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="172" id="Citation CJ3+">Citation CJ3+</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="209" id="Citation CJ4">Citation CJ4</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="205" id="Citation Encore">Citation Encore</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="205" id="Citation Encore+">Citation Encore+</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="134" id="Citation M2">Citation M2</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="223" id="Citation Ultra">Citation Ultra</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="210" id="Citation V">Citation V</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="222" id="Hawker 400XP">Hawker 400XP</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="0" id="HondaJet Elite">HondaJet Elite</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="202" id="Learjet 31">Learjet 31</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="207" id="Learjet 40">Learjet 40</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="224" id="Learjet 40XR">Learjet 40XR</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="178" id="Nextant 400XTi">Nextant 400XTi</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="160" id="Nextant 400XT">Nextant 400XT</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="154" id="Pilatus PC-24">Pilatus PC-24</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="159" id="Premier I">Premier I</div><p class="optgroup-text">Super Light</p><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="250" id="Citation Excel">Citation Excel</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="239" id="Citation XLS">Citation XLS</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="239" id="Citation XLS+">Citation XLS+</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="205" id="Learjet 45">Learjet 45</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="227" id="Learjet 45XR">Learjet 45XR</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="198" id="Learjet 70">Learjet 70</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="199" id="Learjet 75">Learjet 75</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="183" id="Phenom 300">Phenom 300</div><p class="optgroup-text">Midsize</p><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="295" id="Challenger 300">Challenger 300</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="297" id="Challenger 350">Challenger 350</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="281" id="Citation Sovereign">Citation Sovereign</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="274" id="Citation Sovereign+">Citation Sovereign+</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="386" id="Citation X">Citation X</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="400" id="Citation X+">Citation X+</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="287" id="Falcon 2000">Falcon 2000</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="292" id="Falcon 2000DX">Falcon 2000DX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="284" id="Falcon 2000EX">Falcon 2000EX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="321" id="Falcon 2000LX">Falcon 2000LX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="322" id="Falcon 2000LXS">Falcon 2000LXS</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="325" id="Falcon 2000S">Falcon 2000S</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="319" id="Falcon 50EX">Falcon 50EX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="278" id="Gulfstream G200">Gulfstream G200</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="297" id="Gulfstream G280">Gulfstream G280</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="321" id="Hawker 4000">Hawker 4000</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="287" id="Legacy 500">Legacy 500</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="236" id="Praetor 600">Praetor 600</div><p class="optgroup-text">Large</p><div class="select-box__option" data-category="Large" data-length="2" data-fuel="365" id="Challenger 601">Challenger 601</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="358" id="Challenger 604">Challenger 604</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="329" id="Challenger 605">Challenger 605</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="329" id="Challenger 650">Challenger 650</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="346" id="Challenger 850">Challenger 850</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="328" id="Falcon 900B">Falcon 900B</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="314" id="Falcon 900DX">Falcon 900DX</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="314" id="Falcon 900EX">Falcon 900EX</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="304" id="Falcon 900LX">Falcon 900LX</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="506" id="Global 5000">Global 5000</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="540" id="Gulfstream G300">Gulfstream G300</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="540" id="Gulfstream G400">Gulfstream G400</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="517" id="Gulfstream G450">Gulfstream G450</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="447" id="Gulfstream G500">Gulfstream G500</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="540" id="Gulfstream GIV-SP">Gulfstream GIV-SP</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="503" id="Gulfstream GVSP">Gulfstream GVSP</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="363" id="Legacy 600">Legacy 600</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="381" id="Legacy 650">Legacy 650</div><p class="optgroup-text">Ultra Long Range</p><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="385" id="Falcon 7X">Falcon 7X</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="512" id="Global 6000">Global 6000</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="486" id="Global 6500">Global 6500</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="567" id="Global 7500">Global 7500</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="535" id="Global Express">Global Express</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="532" id="Global Express XRS">Global Express XRS</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="447" id="Gulfstream G550">Gulfstream G550</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="503" id="Gulfstream G650">Gulfstream G650</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="503" id="Gulfstream G650ER">Gulfstream G650ER</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="503" id="Gulfstream GV">Gulfstream GV</div><p class="optgroup-text">VIP Airliner</p><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="690" id="Airbus ACJ318">Airbus ACJ318</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="740" id="Airbus ACJ319">Airbus ACJ319</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="907" id="Airbus ACJ320">Airbus ACJ320</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="0" id="Boeing 777-200LR VIP">Boeing 777-200LR VIP</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="758" id="Boeing Business Jet">Boeing Business Jet</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="883" id="Boeing Business Jet 2">Boeing Business Jet 2</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="836" id="Boeing Business Jet 3">Boeing Business Jet 3</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="684" id="Lineage 1000">Lineage 1000</div><p class="optgroup-text">Turboprop Aircraft</p><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="0" id="Aviator TP600">Aviator TP600</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="0" id="Beechcraft 1900D">Beechcraft 1900D</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="102" id="King Air 100">King Air 100</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="113" id="King Air 200">King Air 200</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="138" id="King Air 250">King Air 250</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="136" id="King Air 350">King Air 350</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="104" id="King Air B100">King Air B100</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="113" id="King Air B200">King Air B200</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="135" id="King Air B200GT">King Air B200GT</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="78" id="King Air C90">King Air C90</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="103" id="King Air C90GTi">King Air C90GTi</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="48" id="Kodiak 100">Kodiak 100</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="48" id="Kodiak 100 Series II">Kodiak 100 Series II</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="136" id="Piaggio Aero P180 Avanti II">Piaggio Aero P180 Avanti II</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="136" id="Piaggio P180 Avanti">Piaggio P180 Avanti</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="66" id="Pilatus PC-12">Pilatus PC-12</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="76" id="Pilatus PC-12 NG">Pilatus PC-12 NG</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="62" id="Socata TBM 700">Socata TBM 700</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="107" id="Super King Air F90">Super King Air F90</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="0" id="Swearingen Fairchild Merlin III">Swearingen Fairchild Merlin III</div><p class="optgroup-text">VLJ</p><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="141" id="Citation CJ1+">Citation CJ1+</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="90" id="Citation Mustang">Citation Mustang</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="76" id="Eclipse 500">Eclipse 500</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="76" id="Eclipse 550">Eclipse 550</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="120" id="Hondajet">Hondajet</div><div class="select-box__option" data-category="VLJ" data-length="2" data-fuel="113" id="Phenom 100">Phenom 100</div><p class="optgroup-text">Light</p><div class="select-box__option" data-category="Light" data-length="2" data-fuel="222" id="Beechjet 400A">Beechjet 400A</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="160" id="Citation Bravo">Citation Bravo</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="141" id="Citation CJ2">Citation CJ2</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="159" id="Citation CJ2+">Citation CJ2+</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="172" id="Citation CJ3">Citation CJ3</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="172" id="Citation CJ3+">Citation CJ3+</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="209" id="Citation CJ4">Citation CJ4</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="205" id="Citation Encore">Citation Encore</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="205" id="Citation Encore+">Citation Encore+</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="134" id="Citation M2">Citation M2</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="223" id="Citation Ultra">Citation Ultra</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="210" id="Citation V">Citation V</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="222" id="Hawker 400XP">Hawker 400XP</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="0" id="HondaJet Elite">HondaJet Elite</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="202" id="Learjet 31">Learjet 31</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="207" id="Learjet 40">Learjet 40</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="224" id="Learjet 40XR">Learjet 40XR</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="178" id="Nextant 400XTi">Nextant 400XTi</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="160" id="Nextant 400XT">Nextant 400XT</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="154" id="Pilatus PC-24">Pilatus PC-24</div><div class="select-box__option" data-category="Light" data-length="2" data-fuel="159" id="Premier I">Premier I</div><p class="optgroup-text">Super Light</p><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="250" id="Citation Excel">Citation Excel</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="239" id="Citation XLS">Citation XLS</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="239" id="Citation XLS+">Citation XLS+</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="205" id="Learjet 45">Learjet 45</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="227" id="Learjet 45XR">Learjet 45XR</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="198" id="Learjet 70">Learjet 70</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="199" id="Learjet 75">Learjet 75</div><div class="select-box__option" data-category="Super Light" data-length="2" data-fuel="183" id="Phenom 300">Phenom 300</div><p class="optgroup-text">Midsize</p><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="295" id="Challenger 300">Challenger 300</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="297" id="Challenger 350">Challenger 350</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="281" id="Citation Sovereign">Citation Sovereign</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="274" id="Citation Sovereign+">Citation Sovereign+</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="386" id="Citation X">Citation X</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="400" id="Citation X+">Citation X+</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="287" id="Falcon 2000">Falcon 2000</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="292" id="Falcon 2000DX">Falcon 2000DX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="284" id="Falcon 2000EX">Falcon 2000EX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="321" id="Falcon 2000LX">Falcon 2000LX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="322" id="Falcon 2000LXS">Falcon 2000LXS</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="325" id="Falcon 2000S">Falcon 2000S</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="319" id="Falcon 50EX">Falcon 50EX</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="278" id="Gulfstream G200">Gulfstream G200</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="297" id="Gulfstream G280">Gulfstream G280</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="321" id="Hawker 4000">Hawker 4000</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="287" id="Legacy 500">Legacy 500</div><div class="select-box__option" data-category="Midsize" data-length="2" data-fuel="236" id="Praetor 600">Praetor 600</div><p class="optgroup-text">Large</p><div class="select-box__option" data-category="Large" data-length="2" data-fuel="365" id="Challenger 601">Challenger 601</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="358" id="Challenger 604">Challenger 604</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="329" id="Challenger 605">Challenger 605</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="329" id="Challenger 650">Challenger 650</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="346" id="Challenger 850">Challenger 850</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="328" id="Falcon 900B">Falcon 900B</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="314" id="Falcon 900DX">Falcon 900DX</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="314" id="Falcon 900EX">Falcon 900EX</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="304" id="Falcon 900LX">Falcon 900LX</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="506" id="Global 5000">Global 5000</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="540" id="Gulfstream G300">Gulfstream G300</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="540" id="Gulfstream G400">Gulfstream G400</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="517" id="Gulfstream G450">Gulfstream G450</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="447" id="Gulfstream G500">Gulfstream G500</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="540" id="Gulfstream GIV-SP">Gulfstream GIV-SP</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="503" id="Gulfstream GVSP">Gulfstream GVSP</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="363" id="Legacy 600">Legacy 600</div><div class="select-box__option" data-category="Large" data-length="2" data-fuel="381" id="Legacy 650">Legacy 650</div><p class="optgroup-text">Ultra Long Range</p><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="385" id="Falcon 7X">Falcon 7X</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="512" id="Global 6000">Global 6000</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="486" id="Global 6500">Global 6500</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="567" id="Global 7500">Global 7500</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="535" id="Global Express">Global Express</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="532" id="Global Express XRS">Global Express XRS</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="447" id="Gulfstream G550">Gulfstream G550</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="503" id="Gulfstream G650">Gulfstream G650</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="503" id="Gulfstream G650ER">Gulfstream G650ER</div><div class="select-box__option" data-category="Ultra Long Range" data-length="2" data-fuel="503" id="Gulfstream GV">Gulfstream GV</div><p class="optgroup-text">VIP Airliner</p><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="690" id="Airbus ACJ318">Airbus ACJ318</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="740" id="Airbus ACJ319">Airbus ACJ319</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="907" id="Airbus ACJ320">Airbus ACJ320</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="0" id="Boeing 777-200LR VIP">Boeing 777-200LR VIP</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="758" id="Boeing Business Jet">Boeing Business Jet</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="883" id="Boeing Business Jet 2">Boeing Business Jet 2</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="836" id="Boeing Business Jet 3">Boeing Business Jet 3</div><div class="select-box__option" data-category="VIP Airliner" data-length="2" data-fuel="684" id="Lineage 1000">Lineage 1000</div><p class="optgroup-text">Turboprop Aircraft</p><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="0" id="Aviator TP600">Aviator TP600</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="0" id="Beechcraft 1900D">Beechcraft 1900D</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="102" id="King Air 100">King Air 100</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="113" id="King Air 200">King Air 200</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="138" id="King Air 250">King Air 250</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="136" id="King Air 350">King Air 350</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="104" id="King Air B100">King Air B100</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="113" id="King Air B200">King Air B200</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="135" id="King Air B200GT">King Air B200GT</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="78" id="King Air C90">King Air C90</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="103" id="King Air C90GTi">King Air C90GTi</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="48" id="Kodiak 100">Kodiak 100</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="48" id="Kodiak 100 Series II">Kodiak 100 Series II</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="136" id="Piaggio Aero P180 Avanti II">Piaggio Aero P180 Avanti II</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="136" id="Piaggio P180 Avanti">Piaggio P180 Avanti</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="66" id="Pilatus PC-12">Pilatus PC-12</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="76" id="Pilatus PC-12 NG">Pilatus PC-12 NG</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="62" id="Socata TBM 700">Socata TBM 700</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="107" id="Super King Air F90">Super King Air F90</div><div class="select-box__option" data-category="Turboprop Aircraft" data-length="2" data-fuel="0" id="Swearingen Fairchild Merlin III">Swearingen Fairchild Merlin III</div></div>
+</div>
+</div>
+<div class="charter-view__calculate-hour">
+<p class="label charter-view__calculate-hour_p"><b>Duration</b></p>
+<div>
+<input type="number" name="flight_time" id="flight_time" placeholder="Enter Hours">
+<br>
+<input type="number" name="flight_time_minutes" id="flight_time_minutes" placeholder="Enter Minutes">
+</div>
+</div>
+</div>
+</div>
+
+<div class="car-view d-none">
+<div class="car-view__select-car general-select">
+<p class="car-view__select-car__label label"><b>Select Vehicle</b></p>
+<div class="car-view__select-car__options">
+<div class="general-select-option selected" data-car="standard-car">
+<div class="car-view__car-img-option">
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_646_10362)">
+<path d="M33.9994 18.0722C33.9994 16.7135 33.3988 15.9604 32.0266 15.6324C30.2831 15.2141 28.5366 14.8124 26.793 14.3931C25.1986 14.0108 23.5622 13.7517 22.1319 12.8821C21.5084 12.5036 20.8518 12.1756 20.2102 11.8243C18.6088 10.946 16.8913 10.487 15.0256 10.5627C14.1709 10.5986 13.3151 10.5899 12.4604 10.5569C10.6007 10.4831 8.87221 10.9169 7.22776 11.7282C5.85955 12.4027 4.48935 13.0704 2.98602 13.4343C2.33244 13.5925 1.68487 13.7846 1.04831 13.9875C0.747838 14.0834 0.486019 14.2684 0.299795 14.5164C0.11357 14.7643 0.0123424 15.0627 0.0103946 15.3694C0.00238757 16.499 0.0103946 17.6287 0.0103946 18.7583C0.00918548 19.0241 0.0265729 19.2896 0.0624394 19.5531C0.162528 20.2528 0.579897 20.7119 1.29953 20.7555C2.20633 20.8108 3.12014 20.7691 4.02694 20.7691C4.44331 18.5749 5.65938 17.389 7.503 17.3628C9.49276 17.3346 10.6758 18.4196 11.2063 20.7701H22.7815C23.1818 18.635 24.3889 17.4249 26.1454 17.3618C27.0162 17.3307 27.8059 17.5374 28.5005 18.0411C29.4263 18.7205 29.8757 19.6434 29.9308 20.7837C30.7555 20.7837 31.5532 20.7837 32.3509 20.7837C33.3278 20.7837 33.9854 20.149 34.0024 19.194C34.0044 18.8223 34.0004 18.4477 33.9994 18.0722ZM8.47686 16.2225H7.20674C7.16895 16.2225 7.1327 16.208 7.10589 16.1822C7.07908 16.1563 7.06388 16.1213 7.06362 16.0847C7.06362 16.0479 7.07869 16.0126 7.10554 15.9865C7.13238 15.9605 7.16878 15.9459 7.20674 15.9459H8.47986C8.51782 15.9459 8.55423 15.9605 8.58107 15.9865C8.60791 16.0126 8.62299 16.0479 8.62299 16.0847C8.62273 16.1213 8.60753 16.1563 8.58072 16.1822C8.55391 16.208 8.51765 16.2225 8.47986 16.2225H8.47686ZM12.9018 14.3485C12.9018 14.7736 12.7016 14.9696 12.2622 14.9725C11.4125 14.9793 10.5607 14.9725 9.71295 14.9725C8.91225 14.9725 8.11154 14.9774 7.31083 14.9725C7.12479 14.9743 6.93953 14.9487 6.76135 14.8968C6.65808 14.863 6.56452 14.8059 6.48831 14.7304C6.41209 14.6548 6.35537 14.5629 6.32278 14.462C6.29019 14.3611 6.28265 14.2542 6.30077 14.15C6.31889 14.0458 6.36216 13.9472 6.42705 13.8623C6.58073 13.6536 6.77738 13.4782 7.00456 13.347C7.74147 12.9177 8.50267 12.5289 9.28458 12.1824C9.74098 11.9883 10.2654 11.9126 10.7679 11.8602C11.2703 11.8078 11.7918 11.8398 12.3032 11.8457C12.7036 11.8457 12.8948 12.0397 12.8988 12.4279C12.9088 13.0671 12.9108 13.7073 12.9048 14.3485H12.9018ZM16.1556 16.2225H14.8825C14.8447 16.2225 14.8085 16.208 14.7817 16.1822C14.7548 16.1563 14.7397 16.1213 14.7394 16.0847C14.7394 16.0479 14.7545 16.0126 14.7813 15.9865C14.8081 15.9605 14.8446 15.9459 14.8825 15.9459H16.1556C16.1936 15.9459 16.23 15.9605 16.2568 15.9865C16.2837 16.0126 16.2988 16.0479 16.2988 16.0847C16.2985 16.1208 16.2837 16.1554 16.2576 16.1812C16.2314 16.2069 16.1959 16.2217 16.1586 16.2225H16.1556ZM21.5544 14.956C21.5372 14.9586 21.5198 14.9602 21.5024 14.9609C20.3894 14.9871 19.2754 14.9725 18.1614 14.9725C17.0858 14.9725 16.0095 14.9725 14.9326 14.9725C14.4081 14.9725 14.2219 14.8017 14.2169 14.3097C14.2099 13.6925 14.2089 13.0743 14.2169 12.457C14.2229 12.0067 14.3991 11.8651 14.8525 11.8359C15.2525 11.8095 15.6539 11.8118 16.0535 11.8427C16.9797 11.917 17.8864 12.1414 18.7359 12.5065C19.6417 12.8947 20.4744 13.4314 21.3502 13.8778C21.5954 14.003 21.8737 14.1631 21.9177 14.4552C21.9368 14.5678 21.9098 14.6831 21.8425 14.7766C21.7752 14.8701 21.6729 14.9345 21.5574 14.956H21.5544ZM32.3639 18.3226C31.8695 18.3226 31.4371 17.8548 31.4341 17.3259C31.4341 16.8911 31.7214 16.5786 32.1227 16.5815C32.6041 16.5815 33.0485 17.0668 33.0535 17.5899C33.0595 18.0324 32.7843 18.3255 32.3669 18.3226H32.3639Z" fill="#5A6375"></path>
+<path d="M7.6026 18.133C6.87665 18.1348 6.18106 18.4156 5.6683 18.9139C5.15554 19.4122 4.86745 20.0872 4.86719 20.7911C4.86929 21.4956 5.15856 22.1706 5.67192 22.6691C6.18528 23.1676 6.88109 23.4491 7.60761 23.4521C8.3336 23.4483 9.02857 23.1663 9.54099 22.6676C10.0534 22.169 10.3417 21.4941 10.343 20.7902C10.3422 20.0857 10.0532 19.4103 9.53949 18.9121C9.02574 18.414 8.32916 18.1338 7.6026 18.133V18.133ZM7.5946 21.7664C7.32899 21.7652 7.07454 21.6627 6.88617 21.4812C6.69779 21.2996 6.59059 21.0535 6.58771 20.796C6.58618 20.6654 6.61184 20.5359 6.66316 20.4151C6.71448 20.2944 6.7904 20.185 6.88637 20.0934C6.98235 20.0017 7.0964 19.9299 7.2217 19.882C7.34701 19.8341 7.48099 19.8113 7.61561 19.8148C7.74705 19.8139 7.87739 19.8382 7.99917 19.8861C8.12096 19.934 8.23181 20.0048 8.3254 20.0943C8.419 20.1838 8.49349 20.2902 8.54464 20.4076C8.59579 20.525 8.62259 20.6511 8.6235 20.7785C8.62405 20.9092 8.59773 21.0387 8.54609 21.1594C8.49445 21.2802 8.41852 21.3897 8.32274 21.4817C8.22695 21.5737 8.11323 21.6462 7.98821 21.6951C7.86319 21.744 7.72939 21.7682 7.5946 21.7664Z" fill="#5A6375"></path>
+<path d="M26.3914 18.134C26.032 18.1303 25.6755 18.1954 25.3422 18.3258C25.0089 18.4561 24.7055 18.649 24.4493 18.8934C24.1932 19.1378 23.9894 19.4289 23.8496 19.7499C23.7099 20.0709 23.6369 20.4155 23.6349 20.764C23.6267 21.4672 23.9066 22.1448 24.4134 22.6479C24.9201 23.1511 25.6121 23.4386 26.3373 23.4473C27.8226 23.4725 29.0968 22.2614 29.1078 20.8134C29.1097 20.1101 28.8256 19.4344 28.3171 18.9328C27.8086 18.4312 27.1167 18.1442 26.3914 18.134V18.134ZM26.3663 21.7664C26.2319 21.7677 26.0985 21.7426 25.9742 21.6927C25.8499 21.6428 25.7373 21.5692 25.643 21.4762C25.5488 21.3831 25.4748 21.2726 25.4256 21.1513C25.3763 21.0299 25.3528 20.9001 25.3565 20.7698C25.3568 20.6423 25.3834 20.5162 25.4347 20.3989C25.4859 20.2815 25.5608 20.1753 25.655 20.0864C25.7491 19.9974 25.8606 19.9276 25.9829 19.881C26.1053 19.8344 26.236 19.8119 26.3674 19.8148C26.502 19.8137 26.6355 19.8385 26.7601 19.888C26.8847 19.9374 26.9978 20.0104 27.093 20.1028C27.1881 20.1951 27.2633 20.3049 27.3142 20.4258C27.3651 20.5467 27.3906 20.6761 27.3893 20.8067C27.3804 21.064 27.2688 21.308 27.0779 21.4871C26.8871 21.6662 26.6319 21.7663 26.3663 21.7664Z" fill="#5A6375"></path>
+</g>
+<defs>
+<clipPath id="clip0_646_10362">
+<rect width="34" height="12.8966" fill="white" transform="translate(0 10.5517)"></rect>
+</clipPath>
+</defs>
+</svg>
+</div>
+<p class="car-view__select-car__p">Car</p>
+</div>
+<div class="general-select-option " data-car="luxury">
+<div class="car-view__car-img-option">
+<svg width="35" height="35" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_646_10384)">
+<path d="M38.2912 20.5937C37.3881 20.1103 36.5141 19.5981 35.7501 18.888C35.2158 18.3917 34.6257 17.9599 33.9035 17.7533C31.8074 17.1737 29.6552 16.8369 27.4867 16.7491C27.311 16.7461 27.1371 16.7111 26.9732 16.6458C25.1363 15.8252 23.3188 14.9573 21.4638 14.1855C20.6824 13.8445 19.8551 13.6282 19.0104 13.5442C17.5075 13.428 15.9906 13.4367 14.4807 13.4682C13.4453 13.4897 12.4044 13.5471 11.4066 13.9287C9.28162 14.7407 7.14549 15.5268 5.01354 16.323C4.38592 16.5568 3.76109 16.7864 3.08615 17.0403C3.00961 16.4263 2.61161 16.4263 2.17743 16.4421C1.63192 16.4622 1.08501 16.4306 0.539496 16.4564C0.347453 16.465 -0.00462633 16.5999 -0.000451484 16.6443C0.0309879 16.9058 0.104846 17.1599 0.218033 17.3961C0.259781 17.4907 0.390595 17.5395 0.48105 17.6156L0.906884 17.9599C0.849915 18.0847 0.785786 18.2058 0.714841 18.3228C0.511249 18.6078 0.370727 18.9353 0.303166 19.2823C0.235605 19.6293 0.242647 19.9873 0.323797 20.3312C0.403596 20.8061 0.459797 21.2849 0.492181 21.7658C0.547846 22.3281 0.687008 22.5218 1.21443 22.6867C2.0995 22.9636 2.98596 23.2333 3.87241 23.5044C3.96148 23.5317 4.05472 23.5432 4.19527 23.5719C3.95035 22.4242 4.12012 21.3928 4.79784 20.4904C5.11314 20.0518 5.52491 19.6965 5.99932 19.4539C6.47373 19.2112 6.99724 19.0881 7.5268 19.0946C7.97968 19.0821 8.43002 19.1684 8.84828 19.3479C9.26654 19.5274 9.64327 19.796 9.95377 20.1361C11.0003 21.2608 11.1881 22.5949 10.6802 24.0883H27.3295C26.7241 22.2636 27.0915 20.7142 28.6905 19.6412C29.9123 18.8206 31.4737 18.911 32.5118 19.776C33.9995 21.0126 34.2569 22.5648 33.5013 24.3881C33.7234 24.3889 33.9454 24.3779 34.1665 24.3551C35.508 24.1524 36.849 23.9439 38.1896 23.7297C38.6503 23.6565 38.866 23.3825 38.9119 22.8689C38.9355 22.6107 38.9703 22.3539 38.9996 22.0971V21.1446C38.7792 20.9404 38.5422 20.7561 38.2912 20.5937V20.5937ZM13.4467 14.537C14.9956 14.5054 16.5459 14.4925 18.0947 14.4466C19.0135 14.4142 19.9204 14.6682 20.697 15.1754C21.1702 15.478 21.6531 15.7635 22.2069 16.1035C21.6336 16.247 21.2704 16.5095 21.1382 17.046C21.1215 17.1192 20.9503 17.1981 20.8529 17.1895C18.9853 17.1393 17.1192 17.0776 15.253 17.0188C14.7701 17.0044 14.2789 17.0087 13.8058 16.9657C13.6439 16.9433 13.4972 16.8556 13.398 16.7218C13.1854 16.3811 12.9903 16.0292 12.8135 15.6674C12.5088 15.0663 12.7871 14.5513 13.4467 14.537ZM26.3345 23.2161H12.037C12.0075 23.2161 11.9792 23.204 11.9583 23.1825C11.9374 23.161 11.9257 23.1318 11.9257 23.1013C11.9257 23.0709 11.9374 23.0417 11.9583 23.0202C11.9792 22.9987 12.0075 22.9866 12.037 22.9866H26.3345C26.364 22.9866 26.3923 22.9987 26.4132 23.0202C26.4341 23.0417 26.4458 23.0709 26.4458 23.1013C26.4444 23.1308 26.432 23.1585 26.4113 23.1788C26.3906 23.1991 26.3631 23.2104 26.3345 23.2104V23.2161Z" fill="#5A6375"></path>
+<path d="M30.4902 19.6915C29.7327 19.6953 29.0076 20.0085 28.4736 20.5624C27.9397 21.1163 27.6405 21.8658 27.6416 22.6467C27.6486 23.4199 27.9515 24.159 28.4845 24.703C29.0175 25.2471 29.7374 25.5521 30.4875 25.5517C32.0488 25.5517 33.3625 24.2118 33.3444 22.6482C33.3236 21.0128 32.028 19.67 30.4902 19.6915ZM29.0165 21.5679C29.0903 21.5923 29.1404 21.5923 29.1557 21.6167C29.2948 21.8247 29.434 22.037 29.5732 22.2479L28.6923 22.4014L29.0165 21.5679ZM29.0332 23.6825L28.7285 22.9552L28.8078 22.8289L29.5704 22.9853L29.171 23.7026L29.0332 23.6825ZM30.2314 24.4543L29.4646 24.1458C29.4465 24.0999 29.427 24.0526 29.4076 24.0024C29.5634 23.8718 29.7151 23.7327 29.8793 23.6136C29.9112 23.5896 29.9476 23.5728 29.9863 23.5644C30.0249 23.556 30.0648 23.5561 30.1034 23.5648C30.137 23.5857 30.1656 23.6143 30.1868 23.6484C30.2081 23.6825 30.2214 23.7211 30.2258 23.7614C30.2411 23.9723 30.2314 24.1817 30.2314 24.4543V24.4543ZM30.2314 21.479C30.2278 21.5204 30.2149 21.5605 30.194 21.596C30.173 21.6316 30.1444 21.6617 30.1103 21.6841C30.0693 21.6888 30.0279 21.6849 29.9884 21.6725C29.9489 21.6602 29.9123 21.6397 29.8807 21.6124C29.7276 21.4976 29.5885 21.3628 29.3561 21.1576L30.237 20.7947C30.2384 21.0658 30.2495 21.2738 30.2328 21.479H30.2314ZM31.9584 21.5923C32.0512 21.8333 32.1481 22.0724 32.2492 22.3096L32.1685 22.4373L31.399 22.2623L31.8331 21.5593L31.9584 21.5923ZM30.756 20.7875L31.6397 21.1792C31.4198 21.3685 31.2709 21.5062 31.1095 21.6267C31.0469 21.6727 30.9286 21.72 30.8841 21.6913C30.8491 21.6616 30.8202 21.625 30.7992 21.5836C30.7782 21.5422 30.7654 21.4969 30.7616 21.4503C30.7393 21.2595 30.7574 21.0587 30.7574 20.7875H30.756ZM31.5061 24.1458L30.7393 24.4543C30.7393 24.1774 30.7282 23.9723 30.7393 23.7671C30.756 23.529 30.8785 23.4802 31.0636 23.6237C31.2487 23.7671 31.4017 23.8919 31.5687 24.0268C31.552 24.0626 31.5298 24.1042 31.5075 24.1458H31.5061ZM31.9055 23.7757C31.7218 23.5749 31.5813 23.4314 31.4546 23.2751C31.2946 23.0771 31.3391 22.9322 31.5938 22.9049C31.79 22.8834 31.9904 22.9049 32.2896 22.9049L31.9055 23.7757Z" fill="#5A6375"></path>
+<path d="M7.53946 19.6901C7.16442 19.689 6.79285 19.7641 6.44603 19.9112C6.0992 20.0584 5.78394 20.2746 5.51829 20.5475C5.25265 20.8204 5.04184 21.1447 4.89794 21.5017C4.75403 21.8587 4.67987 22.2415 4.67969 22.6281C4.67894 23.4008 4.97522 24.1422 5.50365 24.6902C6.03207 25.2382 6.74959 25.548 7.4991 25.5517C9.06328 25.5517 10.3728 24.2377 10.3714 22.6654C10.3712 21.886 10.0744 21.1378 9.54492 20.5815C9.01541 20.0252 8.29537 19.7051 7.53946 19.6901V19.6901ZM6.09774 21.4345C6.30092 21.6827 6.43869 21.8348 6.55698 22.0084C6.58109 22.04 6.5982 22.0767 6.60709 22.1158C6.61599 22.155 6.61646 22.1957 6.60847 22.235C6.58471 22.2688 6.5541 22.2968 6.51877 22.3171C6.48345 22.3374 6.44424 22.3496 6.4039 22.3527C6.21743 22.3684 6.02956 22.3527 5.7568 22.3527L6.09774 21.4345ZM6.02538 23.6495C5.9391 23.4114 5.85282 23.1718 5.76793 22.9423C5.82081 22.905 5.84169 22.8777 5.85839 22.8806C6.11166 22.9251 6.36354 22.9738 6.61543 23.024L6.1548 23.7112L6.02538 23.6495ZM7.26392 24.4586L6.36772 24.0885C6.60708 23.8776 6.75459 23.7356 6.91462 23.6136C6.9463 23.5899 6.98267 23.5735 7.02115 23.5658C7.05963 23.5582 7.09927 23.5593 7.13728 23.5692C7.17052 23.5908 7.19865 23.6197 7.2196 23.654C7.24055 23.6883 7.25379 23.7269 7.25835 23.7671C7.27505 23.9694 7.26392 24.1746 7.26392 24.4586ZM7.27784 21.469C7.26392 21.7415 7.11919 21.7674 6.93132 21.6282C6.76851 21.5077 6.62099 21.3657 6.38859 21.1663L7.28062 20.7875C7.28062 21.0587 7.28758 21.2653 7.27784 21.469ZM9.00204 21.601L9.28037 22.3182C9.22053 22.3584 9.19966 22.3842 9.18296 22.3813C8.92968 22.3369 8.67641 22.2881 8.42452 22.2379L8.86567 21.5694L9.00204 21.601ZM8.58456 21.1318C8.57244 21.1668 8.55706 21.2004 8.53864 21.2323L7.90267 21.6956C7.85814 21.4202 7.81222 21.1448 7.75238 20.7746L8.58456 21.1318ZM7.76629 24.46C7.75487 24.2311 7.75487 24.0018 7.76629 23.7729C7.79552 23.5161 7.92633 23.4659 8.12255 23.6366L8.65693 24.1L7.76629 24.46ZM8.93246 23.8145C8.75155 23.595 8.61518 23.4429 8.4955 23.2765C8.45097 23.2134 8.40226 23.0929 8.43148 23.0441C8.45807 23.0055 8.49202 22.9728 8.53126 22.9482C8.5705 22.9235 8.61421 22.9073 8.65971 22.9007C8.84618 22.8806 9.03544 22.9007 9.31655 22.9007C9.16904 23.2306 9.07024 23.4745 8.9269 23.8145H8.93246Z" fill="#5A6375"></path>
+</g>
+<defs>
+<clipPath id="clip0_646_10384">
+<rect width="39" height="12.1034" fill="white" transform="translate(0 13.4483)"></rect>
+</clipPath>
+</defs>
+</svg>
+</div>
+<p class="car-view__select-car__p">Luxury</p>
+</div>
+<div class="general-select-option " data-car="4x4">
+<div class="car-view__car-img-option">
+<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_646_10401)">
+<path d="M0.0148651 11.4082C0.0222972 10.7355 0.453359 10.2132 1.05536 10.0391C1.44183 9.92828 1.79857 10.0233 2.16274 10.2053C2.16274 9.3822 2.15531 8.59868 2.16274 7.81517C2.16274 7.34823 2.37084 7.09497 2.8019 7.02374C2.91338 7.00791 3.03229 7 3.14377 7H16.7594C16.8411 7 16.9303 7 17.012 7.00791C17.4282 7.03957 17.6809 7.26909 17.8147 7.68854C18.2458 9.0498 18.6843 10.3952 19.1079 11.7565C19.1822 12.0018 19.2788 12.0968 19.5315 12.0968C21.8429 12.0889 24.1617 12.1047 26.4731 12.1126C26.7555 12.1126 27.0379 12.1126 27.3129 12.1918C27.8629 12.35 28.0561 12.6112 28.0561 13.2206V16.5684C28.0561 16.6871 27.9967 16.8533 28.2122 16.8454C28.4723 16.8295 28.7324 16.877 29 16.8137V20.0744C28.0338 20.0744 27.0751 20.0585 26.1089 20.0744C25.8414 20.0823 25.8116 20.0031 25.8339 19.742C25.9603 18.2937 25.4623 17.1144 24.3475 16.2834C23.2476 15.4524 22.0361 15.3575 20.8098 15.959C19.42 16.6396 18.6768 18.0879 18.8032 19.7895C18.8106 19.9319 18.8849 20.0744 18.6248 20.0744C16.0161 20.0665 13.4001 20.0665 10.784 20.0665C10.6427 20.0744 10.5833 20.0506 10.613 19.8765C10.6799 19.5046 10.6576 19.1405 10.6056 18.7685C10.3157 16.7583 8.53204 15.3416 6.63685 15.6186C4.70451 15.9036 3.32958 17.8109 3.59713 19.8369C3.62686 20.0506 3.58227 20.0823 3.39646 20.0823C2.54177 20.0902 1.67965 20.0981 0.824963 20.1219C0.654025 20.1219 0.594567 20.0744 0.594567 19.8844C0.609431 19.3779 0.609431 18.8635 0.594567 18.3491C0.594567 18.1591 0.654025 18.1116 0.824963 18.1116C1.19657 18.1275 1.5756 18.1116 1.95464 18.1196C2.10328 18.1275 2.15531 18.0721 2.14787 17.9138C2.14044 17.6605 2.13301 17.4073 2.14787 17.1619C2.16274 16.9482 2.11815 16.9008 1.92491 16.9957C1.03306 17.4073 0.0445922 16.7583 0.0222959 15.7215C-0.0074324 14.2811 9.28973e-07 12.8486 0.0148651 11.4082ZM11.163 11.8594C11.1556 12.0968 11.2373 12.1284 11.4305 12.1284C12.367 12.1205 13.3034 12.1205 14.2324 12.1205C15.1763 12.1205 16.1202 12.1205 17.0641 12.1284C17.2573 12.1284 17.3019 12.0889 17.2424 11.8752C16.9377 10.6881 16.6404 9.50091 16.358 8.30585C16.306 8.108 16.2317 8.03677 16.031 8.04468C14.4926 8.0526 12.9541 8.0526 11.4157 8.04468C11.1927 8.03677 11.163 8.11591 11.163 8.3296C11.1704 9.50882 11.1779 10.6801 11.163 11.8594ZM3.76064 12.2313C4.80113 12.2155 5.83419 12.2234 6.87468 12.2234C7.91517 12.2234 8.94823 12.2155 9.98872 12.2313C10.182 12.2313 10.2414 12.1759 10.2414 11.9622C10.234 10.7435 10.234 9.53257 10.2414 8.31377C10.2414 8.108 10.1968 8.04468 9.99616 8.04468C7.90774 8.0526 5.81932 8.0526 3.73834 8.04468C3.55254 8.04468 3.50051 8.10008 3.50795 8.29003C3.51538 9.51674 3.51538 10.7435 3.50051 11.9702C3.50051 12.1918 3.57483 12.2313 3.76064 12.2313Z" fill="#5A6375"></path>
+<path d="M19.4348 19.5519C19.4348 21.1743 20.7354 22.5435 22.2515 22.5356C23.7751 22.5277 25.0386 21.1743 25.0386 19.5519C25.0386 17.9137 23.7677 16.5682 22.2292 16.5761C20.7131 16.5761 19.4348 17.9374 19.4348 19.5519Z" fill="#5A6375"></path>
+<path d="M4.363 19.5519C4.37043 21.1743 5.63389 22.5277 7.15004 22.5356C8.67361 22.5435 9.9668 21.1664 9.9668 19.5519C9.95936 17.9216 8.68105 16.5682 7.1426 16.5761C5.62646 16.5841 4.363 17.9295 4.363 19.5519Z" fill="#5A6375"></path>
+</g>
+<defs>
+<clipPath id="clip0_646_10401">
+<rect width="29" height="15.5357" fill="white" transform="matrix(-1 0 0 1 29 7)"></rect>
+</clipPath>
+</defs>
+</svg>
+</div>
+<p class="car-view__select-car__p">4x4</p>
+</div>
+<div class="general-select-option " data-car="van">
+<div class="car-view__car-img-option">
+<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_646_10372)">
+<path d="M22.7827 19.1568C22.7837 19.7447 23.0229 20.3083 23.4481 20.7247C23.8732 21.141 24.4498 21.3764 25.0521 21.3793C25.6542 21.3766 26.2308 21.142 26.6565 20.7265C27.0822 20.311 27.3226 19.7482 27.3254 19.1605C27.3251 18.5728 27.0861 18.0092 26.6606 17.5932C26.2352 17.1773 25.6581 16.943 25.056 16.9417C24.4539 16.9422 23.8765 17.1756 23.4504 17.5908C23.0243 18.006 22.7842 18.5691 22.7827 19.1568V19.1568ZM24.2105 19.1503C24.2126 18.9354 24.3018 18.73 24.4586 18.5792C24.6155 18.4284 24.8272 18.3444 25.0473 18.3456C25.1589 18.343 25.2699 18.3623 25.3737 18.4025C25.4774 18.4427 25.5718 18.5029 25.6511 18.5795C25.7305 18.6561 25.7932 18.7475 25.8356 18.8483C25.8779 18.9491 25.899 19.0572 25.8975 19.1661C25.8948 19.3809 25.8058 19.586 25.6496 19.7374C25.4935 19.8888 25.2827 19.9742 25.0626 19.9754C24.951 19.9767 24.8401 19.9562 24.7366 19.9153C24.6331 19.8743 24.539 19.8137 24.4597 19.7369C24.3804 19.6601 24.3175 19.5687 24.2747 19.468C24.232 19.3673 24.2102 19.2593 24.2105 19.1503V19.1503Z" fill="#5A6375"></path>
+<path d="M2.57373 19.1568C2.57473 19.7447 2.81391 20.3083 3.23907 20.7247C3.66424 21.141 4.24087 21.3764 4.84314 21.3793C5.44519 21.3766 6.02179 21.142 6.44751 20.7265C6.87322 20.311 7.11361 19.7482 7.11638 19.1605C7.11613 18.5728 6.87707 18.0092 6.45164 17.5932C6.02621 17.1773 5.44913 16.943 4.84697 16.9417C4.24488 16.9422 3.66755 17.1756 3.24145 17.5908C2.81536 18.006 2.57525 18.5691 2.57373 19.1568V19.1568ZM4.00251 19.1503C4.00428 18.9355 4.09328 18.7301 4.24998 18.5793C4.40667 18.4284 4.61828 18.3444 4.83836 18.3456C4.94995 18.3431 5.06092 18.3626 5.16465 18.4028C5.26839 18.443 5.36278 18.5032 5.44219 18.5797C5.52161 18.6563 5.58443 18.7477 5.62692 18.8484C5.66941 18.9491 5.69069 19.0572 5.68951 19.1661C5.68651 19.381 5.59727 19.5861 5.44098 19.7375C5.28468 19.8888 5.07381 19.9742 4.85366 19.9754C4.74202 19.9767 4.63124 19.9562 4.52778 19.9153C4.42431 19.8743 4.33023 19.8137 4.25102 19.7369C4.1718 19.6601 4.10903 19.5687 4.06637 19.4679C4.02371 19.3672 4.002 19.2592 4.00251 19.1503V19.1503Z" fill="#5A6375"></path>
+<path d="M0.0226041 16.9062C0.0120843 17.1666 0.00730324 17.427 0.00539054 17.6884C0.00539054 18.2018 -0.0682496 18.7311 0.422357 19.0522C0.773336 19.2827 1.2123 19.3546 1.61875 19.4311C1.78515 19.4629 1.98694 19.5544 2.11509 19.4965C2.27767 19.4227 2.14856 19.2015 2.16482 19.0466C2.28723 17.8041 2.94424 16.979 4.17315 16.6467C5.973 16.1613 7.71929 17.624 7.49455 19.4909C7.46585 19.7196 7.5108 19.7476 7.71642 19.7532C9.55069 19.7999 11.3859 19.8568 13.2192 19.9063C16.0519 19.9834 18.8843 20.059 21.7164 20.1331C21.857 20.1331 21.9985 20.1406 22.1381 20.1424C22.5455 20.149 22.5455 20.148 22.4451 19.7625C22.1286 18.5537 22.8573 17.1769 24.046 16.7353C25.3056 16.2686 26.7449 16.7559 27.3655 17.8555C27.6802 18.4156 27.816 19.0064 27.6754 19.6421C27.6438 19.7905 27.6438 19.8755 27.8533 19.8391C28.4864 19.7308 29.1242 19.644 29.7593 19.5441C30.3943 19.4442 30.7577 19.0867 30.8763 18.4725C30.9193 18.241 30.9719 18.0058 30.9939 17.7761C31.0398 17.33 30.8782 16.9659 30.5588 16.6327C30.2891 16.3526 30.1351 15.9718 29.8329 15.6992C28.9148 14.8694 27.7844 14.4428 26.6253 14.0704C25.9699 13.8564 25.2984 13.6926 24.617 13.5803C24.4497 13.55 24.2905 13.4864 24.1493 13.3936C22.5484 12.4107 20.9389 11.452 19.2538 10.6119C18.1425 10.0575 16.9653 9.84652 15.743 9.76157C12.611 9.54595 9.4761 9.63183 6.34119 9.71117C5.44509 9.7345 4.54804 9.77837 3.65194 9.82598C3.3485 9.83363 3.05268 9.92042 2.79521 10.0773C2.53774 10.2343 2.328 10.4556 2.18777 10.7184C1.64457 11.6574 1.10614 12.5993 0.549549 13.5327C0.0885901 14.3075 0.0713758 15.2848 0.0952845 16.1575C0.089439 16.2722 0.0718188 16.3861 0.0426866 16.4973C0.0311448 16.5737 0.0253918 16.6507 0.025473 16.7279C0.0245167 16.7867 0.0245168 16.8474 0.0226041 16.9062ZM21.4869 13.4057C21.4945 13.2499 21.4869 13.093 21.4869 12.8746C21.8694 13.1369 22.2127 13.3675 22.5513 13.6046C22.6016 13.6376 22.6402 13.685 22.6616 13.7404C22.6831 13.7958 22.6863 13.8563 22.6708 13.9135C22.6634 13.9671 22.6391 14.0171 22.6015 14.0567C22.5638 14.0963 22.5146 14.1235 22.4604 14.1348C21.9555 14.2524 21.4639 13.9611 21.4869 13.4057V13.4057ZM15.2142 15.4341C15.2142 15.4024 15.2271 15.372 15.25 15.3496C15.273 15.3272 15.3041 15.3146 15.3366 15.3146H16.2738C16.29 15.3145 16.306 15.3175 16.321 15.3235C16.3359 15.3294 16.3495 15.3382 16.361 15.3493C16.3725 15.3604 16.3816 15.3736 16.3878 15.3882C16.394 15.4027 16.3972 15.4184 16.3972 15.4341C16.3972 15.4499 16.394 15.4655 16.3878 15.4801C16.3816 15.4946 16.3725 15.5078 16.361 15.5189C16.3495 15.5301 16.3359 15.5388 16.321 15.5448C16.306 15.5507 16.29 15.5537 16.2738 15.5536H15.3404C15.324 15.5541 15.3077 15.5514 15.2924 15.5456C15.2771 15.5398 15.2631 15.5311 15.2514 15.52C15.2396 15.5088 15.2302 15.4955 15.2238 15.4807C15.2175 15.466 15.2142 15.4501 15.2142 15.4341V15.4341ZM15.0105 13.8015C15.0172 12.7187 15.0105 11.6369 15.0105 10.5531C15.0105 10.4654 15.0191 10.4047 15.1415 10.4197C15.7421 10.4934 16.3503 10.4859 16.9413 10.6147C18.0344 10.8518 18.9984 11.382 19.9529 11.9262C20.6864 12.3454 20.6816 12.3538 20.6501 13.1733C20.6477 13.1828 20.6477 13.1928 20.6501 13.2023C20.6721 13.3376 20.6022 13.3637 20.4789 13.3619C20.2756 13.3508 20.0741 13.4049 19.9053 13.516C19.7364 13.627 19.6094 13.7889 19.5436 13.977C19.4852 14.1217 19.3992 14.1329 19.271 14.1264C18.6063 14.0946 17.9426 14.0666 17.278 14.0377C17.278 14.0377 15.9085 13.9546 15.2228 13.9527C15.1195 13.9527 15.0095 13.9798 15.0105 13.8015V13.8015ZM10.9508 13.7819C10.9508 13.7819 9.36038 13.6988 8.56565 13.6932C8.46332 13.6932 8.31509 13.7399 8.339 13.5243C8.44707 12.5582 8.54174 11.5902 8.6326 10.6231C8.65077 10.4262 8.72823 10.3748 8.93098 10.3692C10.3808 10.3347 11.8325 10.3496 13.2824 10.3468C13.4822 10.3468 13.5329 10.4029 13.531 10.5951C13.5214 11.6219 13.5195 12.6403 13.531 13.6624C13.531 13.8706 13.4564 13.9014 13.2728 13.8902C12.5001 13.8482 11.7254 13.8174 10.9508 13.7857V13.7819ZM8.33613 15.4341C8.33613 15.4024 8.34903 15.372 8.37198 15.3496C8.39494 15.3272 8.42608 15.3146 8.45854 15.3146H9.39385C9.40988 15.3146 9.42575 15.3177 9.44055 15.3238C9.45535 15.3298 9.46878 15.3386 9.48007 15.3497C9.49136 15.3608 9.50029 15.374 9.50634 15.3885C9.51238 15.403 9.51543 15.4185 9.5153 15.4341C9.51543 15.4498 9.51238 15.4653 9.50634 15.4798C9.50029 15.4943 9.49136 15.5074 9.48007 15.5186C9.46878 15.5297 9.45535 15.5385 9.44055 15.5445C9.42575 15.5505 9.40988 15.5536 9.39385 15.5536H8.45854C8.42608 15.5536 8.39494 15.541 8.37198 15.5186C8.34903 15.4962 8.33613 15.4658 8.33613 15.4341ZM2.42495 12.1419C2.56744 11.8516 2.74915 11.5771 2.87443 11.2794C3.10682 10.7389 3.50945 10.5261 4.10142 10.5214C5.01665 10.5214 5.93283 10.4738 6.84614 10.4197C7.1187 10.4029 7.19234 10.4561 7.16078 10.7221C7.05175 11.6194 6.95612 12.5171 6.87387 13.4151C6.85666 13.5859 6.80119 13.6148 6.63861 13.612C5.50821 13.5924 4.38928 13.5831 3.26079 13.4748H3.24932C2.52823 13.4057 2.09214 12.8214 2.42495 12.1419V12.1419Z" fill="#5A6375"></path>
+</g>
+<defs>
+<clipPath id="clip0_646_10372">
+<rect width="31" height="11.7586" fill="white" transform="translate(0 9.6207)"></rect>
+</clipPath>
+</defs>
+</svg>
+</div>
+<p class="car-view__select-car__p">Van</p>
+</div>
+<div class="general-select-option " data-car="motorcycle">
+<div class="car-view__car-img-option">
+<svg width="25" height="15" viewBox="0 0 25 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.34375 6.45834C4.29167 6.45834 4.22917 6.45834 4.16667 6.45834H4.34375ZM13.9687 0.208344H9.375V2.29168H13.1146L15.1979 4.37501H11.4583L7.29167 6.45834L5.20833 4.37501H0V6.45834H4.16667C1.86458 6.45834 0 8.32293 0 10.625C0 12.9271 1.86458 14.7917 4.16667 14.7917C6.46875 14.7917 8.33333 12.9271 8.33333 10.625L10.4167 12.7083H13.5417L17.1771 6.35418L18.2292 7.40626C17.2812 8.16668 16.6667 9.32293 16.6667 10.625C16.6667 12.9271 18.5312 14.7917 20.8333 14.7917C23.1354 14.7917 25 12.9271 25 10.625C25 8.32293 23.1354 6.45834 20.8333 6.45834C20.6458 6.45834 20.4583 6.48959 20.2812 6.51043L18.1354 4.37501H20.8333V1.25001L16.9583 3.18751L13.9687 0.208344ZM20.8333 12.7083C19.6875 12.7083 18.75 11.7708 18.75 10.625C18.75 9.47918 19.6875 8.54168 20.8333 8.54168C21.9792 8.54168 22.9167 9.47918 22.9167 10.625C22.9167 11.7708 21.9792 12.7083 20.8333 12.7083ZM4.16667 12.7083C3.02083 12.7083 2.08333 11.7708 2.08333 10.625C2.08333 9.47918 3.02083 8.54168 4.16667 8.54168C5.3125 8.54168 6.25 9.47918 6.25 10.625C6.25 11.7708 5.3125 12.7083 4.16667 12.7083Z" fill="#5A6375"></path>
+</svg>
+</div>
+<p class="car-view__select-car__p">Motorcycle</p>
+</div>
+<div class="general-select-option " data-car="hybrid">
+<div class="car-view__car-img-option">
+<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_646_10412)">
+<path d="M3.30343 18.3356C3.6225 17.9974 3.6225 17.6057 3.60634 17.1933C3.59826 16.9459 3.60634 16.7026 3.60634 16.4593C3.60634 15.717 3.71539 15.5768 4.44641 15.4737C5.63381 15.3005 6.7889 15.0118 7.89552 14.5293C10.448 13.4118 13.0894 12.6695 15.8802 12.554C18.1338 12.4633 20.3228 12.7107 22.4028 13.6592C23.5942 14.2077 24.7816 14.7726 25.9811 15.3046C26.8252 15.6799 27.6451 16.0964 28.5781 16.2572C30.3107 16.5541 32.0151 16.9912 33.6629 17.6345C34.2122 17.849 34.5837 18.1748 34.7372 18.7974C34.8745 19.3748 35.0805 19.9191 34.9634 20.5377C34.7695 21.5934 34.6201 21.7913 33.6346 22.014C33.1944 22.113 32.7501 22.1666 32.2897 22.2449C32.5038 20.3109 31.2962 18.8016 29.503 18.7315C28.6992 18.6985 27.9844 18.9913 27.4149 19.5768C26.6395 20.3727 26.3971 21.3418 26.6395 22.4635C21.8333 22.3645 17.0635 22.2656 12.2897 22.1666C12.427 20.0634 11.0983 19.0366 10.0078 18.7933C9.38986 18.6572 8.78001 18.7191 8.21054 18.9954C7.10796 19.5315 6.5708 20.4676 6.48599 21.7006C5.71458 21.5521 4.9876 21.4325 4.2687 21.2635C4.04253 21.2099 3.76386 21.0903 3.64269 20.9088C3.39633 20.5294 3.23478 20.0923 3.04092 19.6758V18.9748C3.12573 18.7562 3.15804 18.4923 3.30343 18.3356ZM17.5926 15.0365C17.6693 15.3664 17.742 15.6964 17.839 16.0221C17.8632 16.1046 17.9763 16.2118 18.053 16.2159C19.7493 16.2737 21.4416 16.319 23.1378 16.3644H23.1419C23.2752 15.9891 23.3842 15.6716 23.5215 15.2757C21.7324 13.8324 19.5151 13.5107 17.1847 13.3169C17.3301 13.9314 17.4634 14.484 17.5926 15.0365ZM11.8777 15.9644C11.902 15.9644 11.9222 15.9644 11.9424 15.9685H12.0514C12.5684 15.9685 13.0894 16.0056 13.6063 16.0221C14.1435 16.0386 14.6766 16.0592 15.2138 16.0757C15.7227 16.0922 16.2315 16.1087 16.7404 16.1293C16.6072 15.2963 16.4779 14.4633 16.3446 13.6303C16.3325 13.5479 16.3164 13.4613 16.2598 13.4076C16.1912 13.3375 16.0821 13.3375 15.9852 13.3375C14.5878 13.3623 13.1782 13.5107 11.8697 14.0056C11.1669 14.2736 10.5046 14.6365 9.82605 14.9541C9.63623 15.0448 9.43833 15.1314 9.29293 15.284C9.20812 15.3706 9.14754 15.4778 9.11927 15.5974C9.09907 15.6964 9.09907 15.8448 9.12735 15.9438C9.32121 15.9685 9.53122 15.9479 9.72912 15.9479C9.93914 15.9479 10.1451 15.9479 10.3551 15.9397" fill="#5A6375"></path>
+<path d="M6.98637 21.7831C7.05907 23.148 8.20205 24.2079 9.52273 24.1336C10.8353 24.0635 11.8733 22.9047 11.8006 21.5975C11.7198 20.183 10.6092 19.148 9.26021 19.2304C7.95568 19.3088 6.91772 20.4758 6.98637 21.7831Z" fill="#5A6375"></path>
+<path d="M27.0233 21.7457C27.0475 23.0612 28.1622 24.154 29.4586 24.1375C30.7793 24.1252 31.8617 22.9994 31.8415 21.6674C31.8173 20.2859 30.7268 19.1972 29.3981 19.2261C28.0612 19.2508 27.0031 20.3766 27.0233 21.7457Z" fill="#5A6375"></path>
+<path d="M2.53611 19.5728C2.12012 19.5522 1.71624 19.5769 1.33255 19.4985C0.787321 19.3872 0.464221 18.9253 0.460182 18.3356C0.456143 16.3191 0.452104 14.3026 0.460182 12.286C0.464221 11.5685 0.956948 11.0778 1.65969 11.0778C3.38021 11.0736 5.10073 11.0778 6.82124 11.0778C6.8899 11.0778 6.9424 11.0736 6.97471 11.1685C7.15242 11.717 7.5563 12.0139 8.12172 12.0221C8.3802 12.0262 8.63869 12.0221 8.90121 12.0221C9.15161 12.0221 9.22431 11.9479 9.22835 11.6881C9.22835 11.651 9.22835 11.6097 9.22835 11.5479C9.36566 11.5479 9.49491 11.5479 9.62011 11.5479C9.79377 11.5479 9.96744 11.552 10.1371 11.5438C10.2905 11.5355 10.3794 11.4365 10.3754 11.3046C10.3713 11.1685 10.2825 11.0778 10.125 11.0778C9.83416 11.0736 9.53933 11.0778 9.23642 11.0778C9.23642 10.9211 9.23642 10.7726 9.23642 10.6077C9.42221 10.6077 9.60395 10.6077 9.78166 10.6077C9.86647 10.6077 9.95533 10.6077 10.0401 10.6077C10.2623 10.6077 10.3713 10.5293 10.3713 10.3726C10.3713 10.2159 10.2663 10.1375 10.0442 10.1375C9.77762 10.1375 9.50702 10.1375 9.22027 10.1375C9.22027 10.0509 9.22431 9.97671 9.22027 9.90661C9.21219 9.76227 9.13546 9.67155 8.99814 9.67155C8.63869 9.66743 8.2752 9.64268 7.91978 9.68392C7.45533 9.73753 7.1403 10.0221 6.98683 10.4716C6.95048 10.5829 6.90605 10.6118 6.79701 10.6118C5.08457 10.6077 3.37617 10.6077 1.66373 10.6118C0.847902 10.6118 0.221894 11.1149 0.0401497 11.9025C0.00783952 12.0427 -0.00427703 12.1953 -0.00427703 12.3396C-0.0083158 14.3273 -0.0083158 16.315 -0.00427703 18.3026C-0.00427703 19.3212 0.694429 20.0305 1.692 20.0346C1.96664 20.0346 2.23724 20.0346 2.51995 20.0346" fill="#5A6375"></path>
+</g>
+<defs>
+<clipPath id="clip0_646_10412">
+<rect width="35" height="14.4828" fill="white" transform="matrix(-1 0 0 1 35 9.65518)"></rect>
+</clipPath>
+</defs>
+</svg>
+</div>
+<p class="car-view__select-car__p">Hybrid</p>
+</div>
+</div>
+</div>
+<div class="car-view__calculate-by">
+<p class="label calculate-by-label"><b>Calculate By</b></p>
+<div class="car-view__select select-box">
+
+<button class="car-view__calculate-by__selectButton" id="car-view__calculate-by__selectButton" data-value="distance">
+<span class="car-view__calculate-by__selectButton__text" id="calculatebyDisplay">
+Distance
+</span>
+<span class="car-view__calculate-by__selectButton__icon">
+<svg width="18" height="18" viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+<path fill="#4B5563" d="M7 10l5 5 5-5H7z"></path>
+</svg>
+</span>
+</button>
+<div class="car-view__calculate-by__dropdowncontainer hide" id="car-view__calculate-by__dropdowncontainer" aria-hidden="true">
+<div class="car-view__calculate-by__dropdownsubcontainer">
+<ul class="car-view__calculate-by__dropdowncontainer-list" id="calculateby-list">
+<li id="calculate_by_distance" value="distance" class="car-view__calculate-by__dropdowncontainer-listitem selected_calculateby calculate_by_option" data-value="distance">
+Distance
+</li>
+<li id="calculate_by_hour" value="hours" class="car-view__calculate-by__dropdowncontainer-listitem calculate_by_option" data-value="hour">
+Hours
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="car-view__calculate-hour d-none">
+<p class="label hours-driven-label"><b>Hours Driven</b></p>
+<div class="car-view__select select-box">
+<input type="number" name="hour_driven" id="hour_driven" placeholder="Enter Hours">
+</div>
+</div>
+<div class="car-view__calculate-distance">
+<p class="label miles-or-kilometer-label"><b>Distance Driven</b></p>
+<div class="car-view__select select-box">
+<input type="number" name="distance_travel" id="distance_travel" placeholder="Enter Distance">
+<div class="distance-type radio-all-visible" data-value="miles" data-callback="">
+<div class="radio-av-option selected" data-value="miles" id="miles_option">
+<div class="radio-av-radio">
+<span class="radio-av-radio-filler"></span>
+</div>
+<p class="radio-av-option__para">Miles</p>
+</div>
+<div class="radio-av-option" data-value="kilometer" id="kilometer_option">
+<div class="radio-av-radio">
+<span class="radio-av-radio-filler"></span>
+</div>
+<p class="radio-av-option__para">Kilometers</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="boat-view d-none">
+<div class="boat-type radio-all-visible" data-value="cruise" data-callback="boatTypeFunc">
+<div class="radio-av-option selected" id="boat-type-select" data-value="cruise">
+<div class="radio-av-radio">
+<span class="radio-av-radio-filler"></span>
+</div>
+<p class="radio-av-option__para">Cruise</p>
+</div>
+<div class="radio-av-option" data-value="liveaboard">
+<div class="radio-av-radio">
+<span class="radio-av-radio-filler"></span>
+</div>
+<p class="radio-av-option__para">Liveaboard</p>
+</div>
+<div class="radio-av-option" data-value="yacht">
+<div class="radio-av-radio">
+<span class="radio-av-radio-filler"></span>
+</div>
+<p class="radio-av-option__para">Yacht</p>
+</div>
+</div>
+
+<div class="cruise-trip-view">
+<div class="cruise-trip-view__answers">
+<div class="cruise-trip-view__first-q">
+<p class="cruise-trip-view__first-q__p cruise-trip-view__first-q__p__calender">
+<b>Days</b>
+</p>
+<div class="cruise-trip-view__first-q__add-minus-func cruise-days add-minus-func" data-value="1">
+<div class="add-minus-func__minus">
+<svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-minus-icon" d="M11.625 1.42552V0.191483H0.375V1.42552H11.625Z"></path>
+</svg>
+</div>
+<input style="border: none;text-align:center" type="number" value="1" class="add-minus-func__number">
+<div class="add-minus-func__add">
+<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-plus-icon" d="M11.625 6.79282V5.43328H6.72704V0.0212708H5.27296V5.43328H0.375V6.79282H5.27296V12.3617H6.72704V6.79282H11.625Z"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="cruise-trip-view__first-q cruise-trip-view__first-q_people">
+<p class="cruise-trip-view__first-q__p cruise-trip-view__first-q__p__people">
+<b>People</b>
+</p>
+<div class="cruise-trip-view__first-q__add-minus-func cruise-people add-minus-func" data-value="1">
+<div class="add-minus-func__minus">
+<svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-minus-icon" d="M11.625 1.42552V0.191483H0.375V1.42552H11.625Z"></path>
+</svg>
+</div>
+<input style="border: none;text-align:center" type="number" value="1" class="add-minus-func__number">
+<div class="add-minus-func__add">
+<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-plus-icon" d="M11.625 6.79282V5.43328H6.72704V0.0212708H5.27296V5.43328H0.375V6.79282H5.27296V12.3617H6.72704V6.79282H11.625Z"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="liveaboard-trip-view d-none">
+<div class="liveaboard-trip-view__answers">
+<div class="liveaboard-trip-view__first-q">
+<p class="liveaboard-trip-view__first-q__p liveaboard-trip-view__first-q__p__calender">
+<b>Days</b>
+</p>
+<div class="liveaboard-trip-view__first-q__add-minus-func liveaboard-days add-minus-func" data-value="1">
+<div class="add-minus-func__minus">
+<svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-minus-icon" d="M11.625 1.42552V0.191483H0.375V1.42552H11.625Z"></path>
+</svg>
+</div>
+<input style="border: none;text-align:center" type="number" value="1" class="add-minus-func__number">
+<div class="add-minus-func__add">
+<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-plus-icon" d="M11.625 6.79282V5.43328H6.72704V0.0212708H5.27296V5.43328H0.375V6.79282H5.27296V12.3617H6.72704V6.79282H11.625Z"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="liveaboard-trip-view__first-q">
+<p class="liveaboard-trip-view__first-q__p liveaboard-trip-view__first-q__p__people">
+<b>People</b>
+</p>
+<div class="liveaboard-trip-view__first-q__add-minus-func liveaboard-people add-minus-func" data-value="1">
+<div class="add-minus-func__minus">
+<svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-minus-icon" d="M11.625 1.42552V0.191483H0.375V1.42552H11.625Z"></path>
+</svg>
+</div>
+<input style="border: none;text-align:center" type="number" value="1" class="add-minus-func__number">
+<div class="add-minus-func__add">
+<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="calculator-global-plus-icon" d="M11.625 6.79282V5.43328H6.72704V0.0212708H5.27296V5.43328H0.375V6.79282H5.27296V12.3617H6.72704V6.79282H11.625Z"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="yacht-trip-view d-none">
+<div class="yacht-trip-view__answers">
+<div class="yacht-trip-view__first-q">
+<p class="yacht-trip-view__first-q__heading">
+<b>Fuel Type</b>
+</p>
+<div>
+<div class="fuel-type__select select-box">
+
+<button class="boat-view__fuel-type__selectButton" id="boat-view__fuel-type__selectButton" data-value="Diesel">
+<span class="boat-view__fuel-type__selectButton__text" id="fueltypeDisplay">
+Diesel
+</span>
+<span class="boat-view__fuel-type__selectButton__icon">
+<svg width="18" height="18" viewBox="0 0 24 24" focusable="false" class="" fill="">
+<path fill="#4B5563" d="M7 10l5 5 5-5H7z"></path>
+</svg>
+</span>
+</button>
+<div class="boat-view__fuel-type__dropdowncontainer hide" id="boat-view__fuel-type__dropdowncontainer" aria-hidden="true">
+<div class="boat-view__fuel-type__dropdownsubcontainer">
+<ul class="boat-view__fuel-type__dropdownsubcontainer-list" id="fueltype-list">
+<li class="boat-view__fuel-type__dropdownsubcontainer-listitem selected_fueltype" data-value="diesel">
+Diesel
+</li>
+<li class="boat-view__fuel-type__dropdownsubcontainer-listitem" data-value="gasoline">
+Gasoline (Petrol)
+</li>
+<li class="boat-view__fuel-type__dropdownsubcontainer-listitem" data-value="biodiesel">
+Biodiesel
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="yacht-trip-view__first-q-total-fuel">
+<div class="yacht-trip-view__first-q_valueselector">
+<p class="yacht-trip-view__first-q__heading__2">
+<b>Total Fuel Consumption</b>
+</p>
+<div>
+<div>
+<div>
+<input type="number" name="total_fuel_consumption" id="total_fuel_consumption" placeholder="Enter Amount">
+</div>
+<div class="consumption-type radio-all-visible" data-value="fuel_consumption" data-callback="fuelConsumptionFunc">
+<div class="radio-av-option selected" data-value="gallon">
+<div class="radio-av-radio">
+<span class="radio-av-radio-filler"></span>
+</div>
+<p class="radio-av-option__para radio-av-option__para-gallons">
+Gallons
+</p>
+</div>
+<div class="radio-av-option" data-value="liter">
+<div class="radio-av-radio">
+<span class="radio-av-radio-filler"></span>
+</div>
+<p class="radio-av-option__para radio-av-option__para-liters">
+Liters
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="line-divider"></div>
+<button class="calculate-btn">CALCULATE</button>
+</div>
+<div class="result" id="resultcontainer">
+<h2 class="result-h2">Your Carbon Footprint</h2>
+<div class="result__illustration-box">
+<svg width="242" height="84" viewBox="0 0 242 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M240.589 56.9611C240.309 56.9609 240.038 56.8661 239.833 56.6959C239.628 56.5257 239.503 56.2927 239.483 56.0439C238.758 47.2814 234.335 39.0855 227.099 33.0964C219.864 27.1073 210.351 23.7667 200.462 23.743C199.279 23.743 198.036 23.7965 196.767 23.9019C196.555 23.9196 196.342 23.8827 196.152 23.7955C195.963 23.7083 195.806 23.5745 195.7 23.4102C191.158 16.3459 184.375 10.6266 176.198 6.96601C168.02 3.30545 158.811 1.86577 149.718 2.82663C140.626 3.7875 132.053 7.10636 125.07 12.369C118.087 17.6317 113.003 24.6051 110.452 32.419C110.385 32.6284 110.241 32.8119 110.043 32.9407C109.846 33.0696 109.605 33.1363 109.36 33.1306L109.065 33.1226C108.912 33.118 108.758 33.1132 108.604 33.1132C101.103 33.1341 93.8366 35.4329 88.0091 39.6283C82.1815 43.8236 78.1436 49.6632 76.5652 56.1783C76.5126 56.3996 76.376 56.5983 76.1783 56.7408C75.9805 56.8833 75.7336 56.9611 75.4789 56.9611H1.11007C0.815664 56.9611 0.533312 56.8572 0.325132 56.6722C0.116953 56.4872 0 56.2364 0 55.9748C0 55.7132 0.116953 55.4623 0.325132 55.2773C0.533312 55.0924 0.815664 54.9884 1.11007 54.9884H74.5905C76.4404 48.2119 80.7915 42.1812 86.9495 37.8587C93.1075 33.5362 100.718 31.171 108.565 31.1405C111.359 23.1108 116.717 15.9748 123.989 10.5994C131.26 5.22402 140.132 1.84063 149.527 0.860288C158.921 -0.120059 168.434 1.34483 176.909 5.07698C185.384 8.80913 192.458 14.6479 197.269 21.884C198.361 21.8084 199.432 21.7703 200.462 21.7703C210.912 21.7955 220.966 25.3259 228.612 31.6552C236.257 37.9845 240.931 46.6457 241.698 55.9057C241.708 56.0349 241.69 56.1646 241.643 56.2875C241.597 56.4104 241.524 56.5239 241.429 56.6217C241.333 56.7195 241.217 56.7996 241.086 56.8574C240.956 56.9152 240.814 56.9497 240.668 56.9587C240.642 56.9604 240.615 56.9611 240.589 56.9611Z" fill="#9CA3AF"></path>
+<path d="M227.381 69.6075H45.3288C45.0344 69.6075 44.7521 69.5036 44.5439 69.3187C44.3357 69.1337 44.2188 68.8828 44.2188 68.6212C44.2188 68.3596 44.3357 68.1088 44.5439 67.9238C44.7521 67.7388 45.0344 67.6349 45.3288 67.6349H227.381C227.675 67.6349 227.958 67.7388 228.166 67.9238C228.374 68.1088 228.491 68.3596 228.491 68.6212C228.491 68.8828 228.374 69.1337 228.166 69.3187C227.958 69.5036 227.675 69.6075 227.381 69.6075Z" fill="#9CA3AF"></path>
+<path d="M89.7325 83.9097H28.6784C28.384 83.9097 28.1017 83.8058 27.8935 83.6208C27.6853 83.4359 27.5684 83.185 27.5684 82.9234C27.5684 82.6618 27.6853 82.4109 27.8935 82.2259C28.1017 82.041 28.384 81.937 28.6784 81.937H89.7325C90.0269 81.937 90.3093 82.041 90.5175 82.2259C90.7256 82.4109 90.8426 82.6618 90.8426 82.9234C90.8426 83.185 90.7256 83.4359 90.5175 83.6208C90.3093 83.8058 90.0269 83.9097 89.7325 83.9097Z" fill="#9CA3AF"></path>
+<path opacity="0.3" d="M146.769 33.6021H151.36C151.36 33.6021 151.36 30.1772 155.365 30.1158C157.445 30.0844 158.521 31.2948 158.962 32.2228C159.471 33.2997 159.317 34.5274 158.635 35.5262C157.857 36.6665 156.18 37.8128 153.085 37.3288L153.056 46.4159H157.595V41.0288C157.595 41.0288 163.962 39.5667 163.962 33.3331C163.962 27.3685 158.534 26.08 155.616 25.9972C153.992 25.9511 153.404 25.889 151.396 26.1421C148.838 26.4652 146.714 29.105 146.769 33.6021Z" fill="#D1D5DB"></path>
+<path opacity="0.3" d="M157.652 48.3104H153.045V52.1333H157.652V48.3104Z" fill="#D1D5DB"></path>
+<path d="M144.868 33.602H149.458C149.458 33.602 149.458 30.177 153.464 30.1156C155.544 30.0842 156.62 31.2946 157.061 32.2227C157.569 33.2995 157.415 34.5273 156.734 35.5261C155.955 36.6664 154.249 37.7032 151.156 37.2192V46.4157H155.695V41.0286C155.695 41.0286 162.06 39.5665 162.06 33.3329C162.06 27.3683 156.041 25.983 153.464 25.983C151.494 25.9817 144.781 26.4063 144.868 33.602Z" fill="#9CA3AF"></path>
+<path d="M155.749 48.3104H151.143V52.1333H155.749V48.3104Z" fill="#9CA3AF"></path>
+</svg>
+</div>
+<div class="result__illustration-box-emmission d-none">
+<svg width="242" height="94" viewBox="0 0 242 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M240.733 56.4533C240.452 56.4531 240.182 56.3582 239.976 56.1879C239.771 56.0175 239.646 55.7843 239.626 55.5352C238.9 46.7639 234.475 38.5599 227.235 32.5648C219.996 26.5697 210.476 23.2258 200.582 23.2021C199.398 23.2021 198.154 23.2556 196.885 23.3612C196.672 23.3789 196.459 23.3419 196.269 23.2546C196.08 23.1673 195.923 23.0335 195.817 22.869C191.272 15.7976 184.485 10.0726 176.303 6.40835C168.121 2.74413 158.905 1.30301 149.808 2.26484C140.71 3.22666 132.132 6.54883 125.145 11.8167C118.157 17.0847 113.07 24.065 110.518 31.8867C110.451 32.0963 110.307 32.28 110.109 32.409C109.911 32.5379 109.671 32.6048 109.426 32.599L109.13 32.5911C108.977 32.5865 108.823 32.5817 108.668 32.5817C101.164 32.6026 93.8927 34.9037 88.0616 39.1032C82.2306 43.3027 78.1902 49.1482 76.6109 55.6697C76.5583 55.8913 76.4216 56.0901 76.2237 56.2328C76.0259 56.3755 75.7788 56.4533 75.524 56.4533H1.11074C0.816151 56.4533 0.53363 56.3493 0.325327 56.1642C0.117023 55.979 0 55.7279 0 55.466C0 55.2042 0.117023 54.953 0.325327 54.7679C0.53363 54.5827 0.816151 54.4787 1.11074 54.4787H74.6351C76.486 47.6954 80.8397 41.6587 87.0014 37.3319C93.1631 33.005 100.778 30.6375 108.63 30.607C111.426 22.5693 116.787 15.4261 124.063 10.0454C131.339 4.66461 140.216 1.27785 149.616 0.296527C159.016 -0.684798 168.534 0.78155 177.015 4.51743C185.495 8.2533 192.572 14.0979 197.387 21.3412C198.48 21.2655 199.551 21.2274 200.582 21.2274C211.038 21.2526 221.098 24.7866 228.748 31.1222C236.398 37.4577 241.075 46.1276 241.842 55.3968C241.852 55.5262 241.834 55.6561 241.788 55.779C241.741 55.902 241.668 56.0157 241.573 56.1136C241.477 56.2115 241.361 56.2917 241.23 56.3495C241.099 56.4074 240.957 56.4419 240.812 56.4509C240.785 56.4526 240.759 56.4533 240.733 56.4533Z" fill="#9CA3AF"></path>
+<path d="M227.517 69.1124H45.3563C45.0618 69.1124 44.7792 69.0084 44.5709 68.8233C44.3626 68.6381 44.2456 68.387 44.2456 68.1251C44.2456 67.8633 44.3626 67.6121 44.5709 67.427C44.7792 67.2418 45.0618 67.1378 45.3563 67.1378H227.517C227.812 67.1378 228.094 67.2418 228.303 67.427C228.511 67.6121 228.628 67.8633 228.628 68.1251C228.628 68.387 228.511 68.6381 228.303 68.8233C228.094 69.0084 227.812 69.1124 227.517 69.1124Z" fill="#9CA3AF"></path>
+<path d="M89.7862 83.4289H28.6957C28.4011 83.4289 28.1186 83.3249 27.9103 83.1397C27.702 82.9546 27.585 82.7034 27.585 82.4416C27.585 82.1797 27.702 81.9286 27.9103 81.7434C28.1186 81.5583 28.4011 81.4543 28.6957 81.4543H89.7862C90.0808 81.4543 90.3633 81.5583 90.5716 81.7434C90.78 81.9286 90.897 82.1797 90.897 82.4416C90.897 82.7034 90.78 82.9546 90.5716 83.1397C90.3633 83.3249 90.0808 83.4289 89.7862 83.4289Z" fill="#9CA3AF"></path>
+<path d="M240.733 56.7536C240.452 56.7534 240.182 56.6585 239.976 56.4882C239.771 56.3178 239.646 56.0846 239.626 55.8355C238.9 47.0642 234.475 38.8602 227.235 32.8651C219.996 26.87 210.476 23.526 200.582 23.5024C199.398 23.5024 198.154 23.5559 196.885 23.6615C196.672 23.6792 196.459 23.6422 196.269 23.5549C196.08 23.4676 195.923 23.3337 195.817 23.1693C191.272 16.0979 184.485 10.3729 176.303 6.70864C168.121 3.04443 158.905 1.6033 149.808 2.56513C140.71 3.52695 132.132 6.84912 125.145 12.117C118.157 17.385 113.07 24.3653 110.518 32.187C110.451 32.3966 110.307 32.5803 110.109 32.7093C109.911 32.8382 109.671 32.9051 109.426 32.8993L109.13 32.8913C108.977 32.8868 108.823 32.882 108.668 32.882C101.164 32.9028 93.8927 35.204 88.0616 39.4035C82.2306 43.603 78.1902 49.4485 76.6109 55.97C76.5583 56.1916 76.4216 56.3904 76.2237 56.5331C76.0259 56.6758 75.7788 56.7536 75.524 56.7536H1.11074C0.816151 56.7536 0.53363 56.6496 0.325327 56.4645C0.117023 56.2793 0 56.0282 0 55.7663C0 55.5045 0.117023 55.2533 0.325327 55.0682C0.53363 54.883 0.816151 54.779 1.11074 54.779H74.6351C76.486 47.9957 80.8397 41.959 87.0014 37.6322C93.1631 33.3053 100.778 30.9378 108.63 30.9073C111.426 22.8696 116.787 15.7264 124.063 10.3457C131.339 4.9649 140.216 1.57815 149.616 0.59682C159.016 -0.384506 168.534 1.08184 177.015 4.81772C185.495 8.5536 192.572 14.3982 197.387 21.6415C198.48 21.5658 199.551 21.5277 200.582 21.5277C211.038 21.5529 221.098 25.0869 228.748 31.4225C236.398 37.758 241.075 46.4279 241.842 55.6971C241.852 55.8265 241.834 55.9564 241.788 56.0793C241.741 56.2023 241.668 56.316 241.573 56.4139C241.477 56.5118 241.361 56.592 241.23 56.6498C241.099 56.7077 240.957 56.7422 240.812 56.7512C240.785 56.7529 240.759 56.7536 240.733 56.7536Z" fill="url(#paint0_linear_588:8903)"></path>
+<path d="M227.517 69.4127H45.3563C45.0618 69.4127 44.7792 69.3087 44.5709 69.1235C44.3626 68.9384 44.2456 68.6873 44.2456 68.4254C44.2456 68.1636 44.3626 67.9124 44.5709 67.7273C44.7792 67.5421 45.0618 67.4381 45.3563 67.4381H227.517C227.812 67.4381 228.094 67.5421 228.303 67.7273C228.511 67.9124 228.628 68.1636 228.628 68.4254C228.628 68.6873 228.511 68.9384 228.303 69.1235C228.094 69.3087 227.812 69.4127 227.517 69.4127Z" fill="url(#paint1_linear_588:8903)"></path>
+<path d="M89.7862 83.7292H28.6957C28.4011 83.7292 28.1186 83.6252 27.9103 83.44C27.702 83.2549 27.585 83.0037 27.585 82.7419C27.585 82.48 27.702 82.2289 27.9103 82.0437C28.1186 81.8586 28.4011 81.7545 28.6957 81.7545H89.7862C90.0808 81.7545 90.3633 81.8586 90.5716 82.0437C90.78 82.2289 90.897 82.48 90.897 82.7419C90.897 83.0037 90.78 83.2549 90.5716 83.44C90.3633 83.6252 90.0808 83.7292 89.7862 83.7292Z" fill="url(#paint2_linear_588:8903)"></path>
+<path d="M130.785 87.5V78.162H129.119L126.221 85.358L123.309 78.162H121.643V87.5H122.805V79.646L125.983 87.5H126.459L129.623 79.646V87.5H130.785ZM135.988 87.668C137.08 87.668 137.99 87.29 138.676 86.618L138.172 85.932C137.626 86.492 136.856 86.8 136.072 86.8C134.616 86.8 133.734 85.736 133.65 84.462H139.11V84.196C139.11 82.166 137.906 80.57 135.862 80.57C133.93 80.57 132.53 82.152 132.53 84.112C132.53 86.226 133.972 87.668 135.988 87.668ZM138.074 83.678H133.636C133.692 82.656 134.406 81.438 135.848 81.438C137.388 81.438 138.06 82.684 138.074 83.678ZM142.532 87.668C143.134 87.668 143.512 87.486 143.778 87.234L143.47 86.436C143.33 86.59 143.064 86.73 142.756 86.73C142.308 86.73 142.084 86.366 142.084 85.862V81.662H143.456V80.738H142.084V78.89H141.02V80.738H139.9V81.662H141.02V86.086C141.02 87.094 141.524 87.668 142.532 87.668ZM145.975 87.5V82.712C146.283 82.166 147.165 81.634 147.823 81.634C147.977 81.634 148.103 81.648 148.229 81.662V80.584C147.305 80.584 146.521 81.116 145.975 81.816V80.738H144.925V87.5H145.975ZM150.079 79.772C150.471 79.772 150.779 79.464 150.779 79.072C150.779 78.68 150.471 78.358 150.079 78.358C149.687 78.358 149.365 78.68 149.365 79.072C149.365 79.464 149.687 79.772 150.079 79.772ZM150.597 87.5V80.738H149.547V87.5H150.597ZM155.673 87.668C156.905 87.668 157.633 87.164 158.151 86.492L157.451 85.848C157.003 86.45 156.429 86.73 155.729 86.73C154.301 86.73 153.391 85.61 153.391 84.112C153.391 82.614 154.301 81.508 155.729 81.508C156.429 81.508 157.003 81.76 157.451 82.376L158.151 81.746C157.633 81.074 156.905 80.57 155.673 80.57C153.657 80.57 152.299 82.11 152.299 84.112C152.299 86.114 153.657 87.668 155.673 87.668ZM164.981 87.668C165.583 87.668 165.961 87.486 166.227 87.234L165.919 86.436C165.779 86.59 165.513 86.73 165.205 86.73C164.757 86.73 164.533 86.366 164.533 85.862V81.662H165.905V80.738H164.533V78.89H163.469V80.738H162.349V81.662H163.469V86.086C163.469 87.094 163.973 87.668 164.981 87.668ZM170.329 87.668C172.387 87.668 173.675 86.072 173.675 84.112C173.675 82.152 172.387 80.57 170.329 80.57C168.271 80.57 166.983 82.152 166.983 84.112C166.983 86.072 168.271 87.668 170.329 87.668ZM170.329 86.73C168.887 86.73 168.089 85.498 168.089 84.112C168.089 82.74 168.887 81.508 170.329 81.508C171.771 81.508 172.569 82.74 172.569 84.112C172.569 85.498 171.771 86.73 170.329 86.73ZM181 87.5V82.754C181 81.284 180.258 80.57 178.858 80.57C177.836 80.57 176.912 81.144 176.436 81.718V80.738H175.386V87.5H176.436V82.558C176.842 82.012 177.612 81.508 178.438 81.508C179.348 81.508 179.964 81.872 179.964 83.076V87.5H181ZM185.267 87.668C187.003 87.668 187.913 86.758 187.913 85.624C187.913 82.992 183.727 83.958 183.727 82.488C183.727 81.886 184.301 81.424 185.225 81.424C186.107 81.424 186.835 81.788 187.241 82.278L187.731 81.55C187.199 81.004 186.387 80.57 185.225 80.57C183.615 80.57 182.719 81.452 182.719 82.516C182.719 85.022 186.905 84.014 186.905 85.652C186.905 86.324 186.331 86.814 185.295 86.814C184.371 86.814 183.517 86.366 183.069 85.848L182.537 86.604C183.223 87.318 184.147 87.668 185.267 87.668ZM196.196 87.668C198.254 87.668 199.542 86.072 199.542 84.112C199.542 82.152 198.254 80.57 196.196 80.57C194.138 80.57 192.85 82.152 192.85 84.112C192.85 86.072 194.138 87.668 196.196 87.668ZM196.196 86.73C194.754 86.73 193.956 85.498 193.956 84.112C193.956 82.74 194.754 81.508 196.196 81.508C197.638 81.508 198.436 82.74 198.436 84.112C198.436 85.498 197.638 86.73 196.196 86.73ZM202.598 87.5V81.662H203.97V80.738H202.598V80.22C202.598 79.352 202.976 78.89 203.676 78.89C204.012 78.89 204.278 79.016 204.502 79.212L204.936 78.54C204.516 78.148 204.054 78.022 203.508 78.022C202.318 78.022 201.548 78.834 201.548 80.22V80.738H200.428V81.662H201.548V87.5H202.598ZM213.321 87.668C214.973 87.668 216.093 86.884 216.877 85.806L215.897 85.274C215.365 86.058 214.385 86.632 213.321 86.632C211.277 86.632 209.723 85.05 209.723 82.838C209.723 80.598 211.277 79.044 213.321 79.044C214.385 79.044 215.365 79.604 215.897 80.402L216.863 79.856C216.121 78.792 214.973 78.008 213.321 78.008C210.633 78.008 208.519 79.968 208.519 82.838C208.519 85.708 210.633 87.668 213.321 87.668ZM222.614 87.668C225.372 87.668 227.262 85.596 227.262 82.838C227.262 80.08 225.372 78.008 222.614 78.008C219.856 78.008 217.98 80.08 217.98 82.838C217.98 85.596 219.856 87.668 222.614 87.668ZM222.614 86.632C220.514 86.632 219.184 85.008 219.184 82.838C219.184 80.654 220.514 79.044 222.614 79.044C224.7 79.044 226.058 80.654 226.058 82.838C226.058 85.008 224.7 86.632 222.614 86.632ZM232.745 89.544V88.858H229.903C231.555 87.654 232.717 86.632 232.717 85.512C232.717 84.364 231.737 83.86 230.715 83.86C229.931 83.86 229.119 84.154 228.657 84.742L229.119 85.274C229.413 84.882 230.001 84.546 230.687 84.546C231.289 84.546 231.877 84.854 231.877 85.568C231.877 86.478 230.813 87.374 228.671 88.914V89.544H232.745Z" fill="#333333"></path>
+<defs>
+<linearGradient id="paint0_linear_588:8903" x1="120.922" y1="0.300293" x2="120.922" y2="56.7536" gradientUnits="userSpaceOnUse">
+<stop stop-color="#008370"></stop>
+<stop offset="1" stop-color="#97C93D"></stop>
+</linearGradient>
+<linearGradient id="paint1_linear_588:8903" x1="136.437" y1="67.4381" x2="136.437" y2="69.4127" gradientUnits="userSpaceOnUse">
+<stop stop-color="#008370"></stop>
+<stop offset="1" stop-color="#97C93D"></stop>
+</linearGradient>
+<linearGradient id="paint2_linear_588:8903" x1="59.241" y1="81.7545" x2="59.241" y2="83.7292" gradientUnits="userSpaceOnUse">
+<stop stop-color="#008370"></stop>
+<stop offset="1" stop-color="#97C93D"></stop>
+</linearGradient>
+</defs>
+</svg>
+<div id="emmission-total-text" class="">0.00</div>
+</div>
+<div id="emmission-results" class="d-none">
+<div id="manual-footprint" class="d-none">
+<h3 class="amount_h3 emission-result-h2">Offset by Amount</h3>
+<ul id="manual-footprint-append"></ul>
+<hr>
+</div>
+<div id="plane-footprint" class="d-none">
+<h3 class="emission-result-h2">Flight Footprint</h3>
+<ul id="plane-footprint-append"></ul>
+<hr>
+</div>
+<div id="car-footprint" class="d-none">
+<h3 class="emission-result-h2">Car Footprint</h3>
+<ul id="car-footprint-append"></ul>
+<hr>
+</div>
+<div id="boat-footprint" class="d-none">
+<h3 class="emission-result-h2">Boat Footprint</h3>
+<ul id="boat-footprint-append"></ul>
+<hr>
+</div>
+<div id="metric-ton-final-line" style="padding-bottom: 7px;">
+<span><b>Total Metric Tons</b></span>
+<span><b id="metric-ton-final-total">0.00 MT</b></span>
+</div>
+
+
+<div class="continue-calculating-button" id="continue-calculating-button">
+CONTINUE CALCULATING
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</main></div>
+</div></section></article></main>
+</div>
+<div id="no_show" style="display: none;">
+API key is not valid.
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" class="uk-row-first"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js" class="uk-row-first"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" class="uk-row-first">
+<script defer="" src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" class="uk-row-first"></script>
+<script defer="" class="uk-row-first">
+   jQuery(window).ready(function(){
+       jQuery('#multi-currency').select2({
+		   minimumResultsForSearch:-1
+	   });
+
+   });
+</script>
+<style class="uk-row-first">
+.select2-container{width:160px !important;}
+.select2-container--default .select2-selection--single{border:0;}
+.select2-container--default .select2-selection--single .select2-selection__rendered{padding-right: 30px; text-align: right;color:#4B5563;font-family: 'ProximaNova', Fallback, Proxima Nova Regular;    line-height: 20px;}
+.select2-container--default .select2-results__option--selected{background-color:var(--primarycolor) !important; color:#fff !important;}
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable:not(.select2-container--default .select2-results__option--selected){background-color:var(--lightprimarycolor) !important; color:#444 !important;}
+.select2-container--default .select2-results__option--selected::before { content: url("/wp-content/plugins/sti_client/public/assets/images/tick-thin-2.svg"); color: white; fill: white; display: inline-block; width: 12px; position: absolute; left: 15px; }
+.select2-results__option{ font-size: 14px; padding-block: 15px; cursor: pointer; padding-left: 50px; padding-right: 35px;font-family: 'ProximaNova', Fallback, Proxima Nova Regular; }
+.select2-container--open .select2-dropdown--below,.select2-container--open .select2-dropdown--above{background-color: #fff;border: 1px solid transparent; border-radius: 4px;box-shadow: 0px 1px 3px 0px rgb(60 64 67 / 30%), 0px 4px 8px 3px rgb(60 64 67 / 15%); box-sizing: border-box; outline: none;overflow: auto;position: absolute;z-index: 7; min-width: 150px;}
+.select2-container--default .select2-selection--single .select2-selection__arrow{height: 20px !important;}
+
+</style><script defer="" src="https://sustainabletravel.org/wp-content/plugins/sti_client/public/app.js?ver=1.3" class="uk-row-first"></script>
+<script defer="" src="https://sustainabletravel.org/wp-content/plugins/sti_client/public/scripts.js?ver=2.1" class="uk-row-first"></script>
+<div class="wpb_column vc_column_container vc_col-sm-12 uk-grid-margin"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div>
+
+
+
+    </div>
+
+
+
+    </div>
+
+{% endblock %}

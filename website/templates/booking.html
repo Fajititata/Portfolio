@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+    <!-- Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="my-4">Available Locations</h1>
+        <ul class="list-group">
+            {% for location in locations %}
+            <li class="list-group-item">
+                <a href="{{ url_for('checkout', location_id=location.id) }}">
+                    {{ location.name }} - ${{ location.price }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+
+
+        {% if uploaded_filename %}
+            <h2>Travel Plan</h2>
+            <p><a href="{{ url_for('download_file', filename=uploaded_filename) }}" class="btn btn-success">Download File</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>

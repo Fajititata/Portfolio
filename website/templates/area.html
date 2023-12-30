@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Greengo | Home{% endblock %}
+
+{% block body %}
+<style>
+    /* Add CSS to style the result box with rounded border */
+    .result-box {
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    /* Add CSS to remove margins and padding for the activity items */
+    .activity-item {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+
+<div class="container mt-5">
+<h1 class="fs-2">Area Guide</h1>
+<h1 class="fs-5">Discover eco-conscious travel experiences with our Area Guide, your gateway to sustainable accommodations, eco-friendly transport, and immersive travel guides</h1>
+
+<form autocomplete="off" id="area-guide-form" method="POST" action="/search" class="mt-5">
+<label for="country">Country:</label>
+<input type="text" id="country" name="country" list="country-list" required>
+<datalist id="country-list">
+  <option value="Japan">
+  <option value="Vietnam">
+  <option value="Thailand">
+  <option value="South Korea">
+</datalist>
+
+<label for="city" class="ms-3">City:</label>
+<input type="text" id="city" name="city" list="city-list" required>
+<datalist id="city-list">
+  <!-- Add options for cities based on the selected country -->
+</datalist>
+
+<input type="submit" value="Search" class="ms-5">
+</form>
+{% if country and city %}
+<div class="result-box">
+    <h1 class="fs-1"><u>{{ country|e }} - {{ city|e }}</u></h1>
+    <div>
+        <h3 class="fs-2">Eco-Friendly Activities:</h3>
+        {% for index in range(eco_friendly_activities|length) %}
+        <div class="activity-item">
+            <h3 class="fs-3">{{ eco_friendly_activities[index][index]|e }}</h3>
+            <p>{{ descriptions[index][index]|e }}</p>
+            <img src="{{ images[i]|e }}" alt="Image" width="800" height="400">
+            <p>-</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+</div>
+
+<script>
+
+  // JavaScript to update the cities dropdown options based on the selected country
+  const countryInput = document.getElementById('country');
+  const cityInput = document.getElementById('city');
+  const cityList = document.getElementById('city-list');
+
+  // Define a dictionary of countries and their corresponding cities
+  const citiesByCountry = {
+    'Japan': ['Tokyo', 'Osaka', 'Kyoto'],
+    'Vietnam': ['Ho Chi Minh City','Hanoi', 'Da Nang'],
+    'Thailand': ['Bangkok', 'Chiang Mai', 'Phuket'],
+    'South Korea': ['Jeju', 'Seoul', 'Gangwon']
+  };
+
+  countryInput.addEventListener('input', () => {
+    const selectedCountry = countryInput.value;
+    const cities = citiesByCountry[selectedCountry] || [];
+
+    // Clear existing options
+    cityList.innerHTML = '';
+
+    // Add new options for cities
+    cities.forEach(city => {
+      const option = document.createElement('option');
+      option.value = city;
+      cityList.appendChild(option);
+    });
+  });
+</script>
+
+{% endblock %}

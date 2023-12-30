@@ -1,0 +1,65 @@
+<div id="main-navbar">
+
+    <a href="/"><img id="logo-main" src="{{ url_for('static',filename='/images/logo.png') }}" width="200" draggable="false"></a>
+
+    <nav id="mainnavbar" class="navbar navbar-expand-md navbar-light border-bottom py-3 my-4">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav justify-content-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+                
+                {% if 'admin' in current_user.roles %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Admin</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/admin">Add Locations</a></li>
+                        <li><a class="dropdown-item" href="/admin/bookings">View Bookings</a></li>
+                        {% if 'superadmin' in current_user.roles %}
+                        <li><a class="dropdown-item" href="/admin/dashboard">Dashboard</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+                {% endif %}
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Travel Guide</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/calculator">Emissions Calculator</a></li>
+                        <li><a class="dropdown-item" href="/search">View Areas</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/booking">Book Location</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Manage
+                        Profile</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/myprofile">My Profile</a></li>
+                        <li><a class="dropdown-item" href="/retrieveCustomers">Coupons</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    {% if current_user.is_anonymous %}
+                    <a class="nav-link" href="/login">Sign In</a>
+                    {% elif current_user.is_authenticated %}
+                    <a class="nav-link" href="/logout">Sign Out</a>
+                    {% endif %}
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+</div>

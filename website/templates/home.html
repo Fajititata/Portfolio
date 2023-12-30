@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Greengo | Home{% endblock %}
+
+{% block body %}
+{% if current_user.is_anonymous %}
+<h1>You are not logged in</h1>
+{% elif current_user.is_authenticated %}
+<h1>{{current_user.email}}</h1>
+<h1>{{current_user.phone_no}}</h1>
+{% endif %}
+{% endblock %}
