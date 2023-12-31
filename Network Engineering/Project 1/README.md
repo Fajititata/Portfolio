@@ -1,5 +1,5 @@
 ## Network topology
-(https://github.com/Fajititata/portfolio/edit/main/Network%20Engineering/Project%201/topology.jpg)
+![topology](https://github.com/Fajititata/portfolio/assets/88973742/d4dd13ba-a71b-4cc8-8e97-27dda47e39ba)
 
 ## In this project we'll be configuring a secured network infrastructure such that:
 * HQ and their branch offices each have an administrator and accounts created locally on their respective routers.
